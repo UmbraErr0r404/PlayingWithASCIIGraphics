@@ -1,3 +1,13 @@
+/**
+ * @file
+ * @author Elizabeth Harasymiw <Elizabeth.Harasymiw@gmail.com>
+ *
+ * @section DESCRIPTION
+ * This is the file that contains the main and where all the 
+ * classes do therr main interactions. A large part of this 
+ * code might be changed into a game engine file or class.
+ */
+
 #include <string>	
 #include "Screen.hpp"
 #include "Frame.hpp"
