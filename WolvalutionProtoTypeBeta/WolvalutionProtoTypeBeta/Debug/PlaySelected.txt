@@ -1,0 +1,13 @@
+Height 2 Width 6 Name PlaySelected
+Char 32 BG 14 FG 0
+Char 32 BG 0 FG 10
+Char 80 BG 14 FG 0
+Char 81 BG 0 FG 10
+Char 108 BG 14 FG 0
+Char 117 BG 0 FG 10
+Char 97 BG 14 FG 0
+Char 105 BG 0 FG 10
+Char 121 BG 14 FG 0
+Char 116 BG 0 FG 10
+Char 32 BG 14 FG 0
+Char 32 BG 0 FG 10
