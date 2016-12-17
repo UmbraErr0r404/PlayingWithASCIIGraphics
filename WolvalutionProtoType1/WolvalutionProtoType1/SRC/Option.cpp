@@ -1,33 +1,33 @@
 #include "Option.hpp"
 
 Option::Option(){
-   myHealthChange = 0;
-   myStaminaChange = 0;
-   myItem = "NaI";
-   myText = "Do Nothing";
-   isSeletced = false;
+	myHealthChange = 0;
+	myStaminaChange = 0;
+	myItem = "NaI";
+	myText = "Do Nothing";
+	isSeletced = false;
 }
 
 Option::Option(int HC, int SC, std::string item, std::string def, bool selected){
-   myHealthChange = HC;
-   myStaminaChange = SC;
-   myItem = item;
-   myText = def;
-   isSeletced = selected;
+	myHealthChange = HC;
+	myStaminaChange = SC;
+	myItem = item;
+	myText = def;
+	isSeletced = selected;
 }
 
 int Option::getHealthChange(){
-   return myHealthChange;
+	return myHealthChange;
 }
 
 int Option::getStaminaChange(){
-   return myStaminaChange;
+	return myStaminaChange;
 }
 
 std::string Option::getMyItem(){
-   return myItem;
+	return myItem;
 }
 
 std::string Option::getMyText(){
-   return myText;
+	return myText;
 }

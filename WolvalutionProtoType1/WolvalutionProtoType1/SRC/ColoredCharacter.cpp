@@ -1,38 +1,38 @@
 #include "ColoredCharacter.hpp"
 
 ColoredCharacter::ColoredCharacter(){
-   bg = Black;
-   fg = White;
-   c = ' ';
+	bg = Black;
+	fg = White;
+	c = ' ';
 }
 
 ColoredCharacter::ColoredCharacter(char ch){
-   bg = Black;
-   fg = White;
-   c = ch;
+	bg = Black;
+	fg = White;
+	c = ch;
 }
 
 ColoredCharacter::ColoredCharacter(color inputbg, color inputfg, char ch){
-   c = ch;
-   bg = inputbg;
-   fg = inputfg;
+	c = ch;
+	bg = inputbg;
+	fg = inputfg;
 }
 
 bool ColoredCharacter::operator==(ColoredCharacter CCcompare){
-   if ((bg == CCcompare.getBG()) && (fg == CCcompare.getFG()) && (c = CCcompare.getChar()))
-      return true;
-   else
-      return false;
+	if ((bg == CCcompare.getBG()) && (fg == CCcompare.getFG()) && (c = CCcompare.getChar()))
+		return true;
+	else
+		return false;
 }
 
 char ColoredCharacter::getChar(){
-   return c;
+	return c;
 }
 
 color ColoredCharacter::getBG(){
-   return bg;
+	return bg;
 }
 
 color ColoredCharacter::getFG(){
-   return fg;
+	return fg;
 }

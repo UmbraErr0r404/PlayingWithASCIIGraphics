@@ -1,82 +1,82 @@
 #include "Player.hpp"
 
 Player::Player(){
-   myHealth = MAX_HEALTH;
-   myStamina = MAX_STAMINA;
-   myXLocation = 4;
-   myYLocation = 4;
-   std::string myName = "Joe";
+	myHealth = MAX_HEALTH;
+	myStamina = MAX_STAMINA;
+	myXLocation = 4;
+	myYLocation = 4;
+	std::string myName = "Joe";
 }
 
 void Player::modifyHealth(int num){
-   myHealth = myHealth + num;
+	myHealth = myHealth + num;
 }
 
 void Player::modifyStamina(int num){
-   myStamina = myStamina + num;
+	myStamina = myStamina + num;
 }
 
 int Player::getHealth(){
-   return myHealth;
+	return myHealth;
 }
 
 int Player::getStamina(){
-   return myStamina;
+	return myStamina;
 }
 
 int Player::getXLocation(){
-   return myXLocation;
+	return myXLocation;
 }
 
 int Player::getYLocation(){
-   return myYLocation;
+	return myYLocation;
 }
 
 std::string Player::getName(){
-   return myName;
+	return myName;
 }
 
 int Player::searchItems(std::string item){
-   for (int i = 0; i < inventory.size(); i++){
-      if (inventory[i] == item)
-         return i;
-      else
-         return -1;
-   }
+	for (int i = 0; i < inventory.size(); i++){
+		if (inventory[i] == item)
+			return i;
+		else
+			return -1;
+	}
 }
 
 void Player::givePlayerItem(std::string item){
-   inventory.push_back(item);
+	inventory.push_back(item);
 }
 
 std::string Player::removeItem(int index){
-   std::string temp = inventory[index];
-   inventory[index].erase();
-   return temp;
+	std::string temp = inventory[index];
+	inventory[index].erase();
+	return temp;
 }
 
 void Player::movePlayerNorth(){
-   myYLocation = myYLocation - 1;
+	myYLocation = myYLocation - 1;
 }
 
 void Player::movePlayerSouth(){
-   myYLocation = myYLocation + 1;
+	myYLocation = myYLocation + 1;
 }
 
 void Player::movePlayerEast(){
-   myXLocation = myXLocation + 1;
+	myXLocation = myXLocation + 1;
 }
 
 void Player::movePlayerWest(){
-   myXLocation = myXLocation - 1;
+	myXLocation = myXLocation - 1;
 }
 
 int Player::getMAXHEALTH(){
-   return MAX_HEALTH;
+	return MAX_HEALTH;
 }
 
 int Player::getMAXSTAMINA(){
-   return MAX_STAMINA;
+	return MAX_STAMINA;
 }
 
 

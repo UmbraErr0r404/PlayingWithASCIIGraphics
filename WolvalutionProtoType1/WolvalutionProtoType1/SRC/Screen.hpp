@@ -17,65 +17,65 @@
 
 class Screen{
 private:
-   const static int HEIGHT = 50;
-   const static int WIDTH = 120;
-   std::deque< Frame > PrintOrder;
-   int frameCount;
+	const static int HEIGHT = 50;
+	const static int WIDTH = 120;
+	std::deque< Frame > PrintOrder;
+	int frameCount;
 
 public:
-   /**
-    * Default Construture to setup a Screen
-    */
-   Screen();
+	/**
+	 * Default Construture to setup a Screen
+	 */
+	Screen();
 
-   /**
-    * 
-    */
-   void ClearPrintOrder();
+	/**
+	 * 
+	 */
+	void ClearPrintOrder();
 
-   /**
-    *
-    */
-   void PushFrameFront(Frame q);
+	/**
+	 *
+	 */
+	void PushFrameFront(Frame q);
 
-   /**
-    *
-    */
-   void PushFrameBack(Frame q);
+	/**
+	 *
+	 */
+	void PushFrameBack(Frame q);
 
-   /**
+	/**
    *
    */
-   Frame PopFrameFront();
+	Frame PopFrameFront();
 
-   /**
+	/**
    *
    */
-   Frame PopFrameBack();
+	Frame PopFrameBack();
 
-   /**
-    * Returns postions in deque where the frame is, or -1 if not found.
-    */
-   int SearchFrame(std::string searchName);
+	/**
+	 * Returns postions in deque where the frame is, or -1 if not found.
+	 */
+	int SearchFrame(std::string searchName);
 
-   /**
-    *
-    * @param Ix
-    * @param Iy
-    * @param Iq
-    */
-   void UpdateMap(int Ix, int Iy, Map aMap);
+	/**
+	 *
+	 * @param Ix
+	 * @param Iy
+	 * @param Iq
+	 */
+	void UpdateMap(int Ix, int Iy, Map aMap);
 
-   /**
-    * returns the current map for this screen, for the purposes of this game,
-    * each screen will only have one current map.
-    */
-   Frame CurrentMap();
+	/**
+	 * returns the current map for this screen, for the purposes of this game,
+	 * each screen will only have one current map.
+	 */
+	Frame CurrentMap();
 
-   /**
+	/**
    * Returns the number of Frames in the PrintOrder
    */
-   int printOrderLength();
+	int printOrderLength();
       
 };
 #endif 
