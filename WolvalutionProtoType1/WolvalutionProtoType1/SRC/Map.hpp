@@ -11,6 +11,13 @@
 #include "MapSquare.hpp"
 #include "Player.hpp"
 
+/*
+ * File local TODO list
+ * ====================
+ *
+ * * move WIDTH and HEIGHT to wherever they should be. (Id est, not here.)
+ */
+
 class Map{
 private:
 	std::deque<std::deque<MapSquare> > myMapSquares;
