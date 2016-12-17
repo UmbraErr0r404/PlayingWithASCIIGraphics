@@ -53,7 +53,7 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
 
 void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string newFrameName){
 	std::ifstream myfile;
-	myfile.open(fileName);
+	myfile.open(fileName.c_str());
 
 	std::string nom, fName;
 	int fHeight, fWidth, charNum, fFG, fBG;
@@ -84,7 +84,7 @@ void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string 
 void Frame::ExportFrame(std::string fileName){
 	std::ofstream myfile;
 
-	myfile.open(fileName);
+	myfile.open(fileName.c_str());
 	myfile << "Height " << height << " Width " 
 				 << width << " Name " << name << "\n";
 
