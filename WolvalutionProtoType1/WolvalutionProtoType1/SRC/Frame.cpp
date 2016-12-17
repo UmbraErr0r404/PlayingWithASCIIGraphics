@@ -40,8 +40,8 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
 	ColoredCharacter MSPlayer(Black, Yellow, '@');
 	ColoredCharacter MUnknown(Black, Red, '?');
 
-	for (int bx = 0; bx < width; bx++)
-		for (int by = 0; by < height; by++){
+	for (unsigned int bx = 0; bx < width; bx++)
+		for (unsigned int by = 0; by < height; by++){
 			if (AMap.getMyPlayerXLocation() == bx && AMap.getMyPlayerYLocation() == by)
 				frame[bx][by] = MSPlayer;
 			else if (AMap[bx][by].getScenarioActive())
@@ -51,21 +51,9 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
 		}
 };
 
-Frame::Frame(const Frame &Iframe){
-	x = Iframe.x;
-	y = Iframe.y;
-	height = Iframe.height;
-	width = Iframe.width;
-	ResizeFrame(width, height);
-
-	for (int i = 0; i < width; i++)
-		for (int k = 0; k < height; k++)
-			frame[i][k] = Iframe.frame[i][k];
-}
-
 void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string newFrameName){
 	std::ifstream myfile;
-	myfile.open(fileName);
+	myfile.open(fileName.c_str());
 
 	std::string nom, fName;
 	int fHeight, fWidth, charNum, fFG, fBG;
@@ -96,12 +84,12 @@ void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string 
 void Frame::ExportFrame(std::string fileName){
 	std::ofstream myfile;
 
-	myfile.open(fileName);
+	myfile.open(fileName.c_str());
 	myfile << "Height " << height << " Width " 
 				 << width << " Name " << name << "\n";
 
-	for (int x = 0; x < width; x++)
-		for (int y = 0; y < height; y++)
+	for (unsigned int x = 0; x < width; x++)
+		for (unsigned int y = 0; y < height; y++)
 			myfile << "Char " << int(frame[x][y].getChar())
 						 << " BG " << frame[x][y].getBG() 
 						 << " FG " << frame[x][y].getFG() 
@@ -114,44 +102,44 @@ std::deque<ColoredCharacter>& Frame::operator[](const int index){
 	return frame[index];
 }
 
-std::string Frame::getName(){
+std::string Frame::getName() const{
 	return name;
 }
 
-int Frame::getX(){
+unsigned int Frame::getX() const{
 	return x;
 }
 
-int Frame::getY(){
+unsigned int Frame::getY() const{
 	return y;
 }
 
-int Frame::getHeight(){
+unsigned int Frame::getHeight() const{
 	return height;
 }
 
-int Frame::getWidth(){
+unsigned int Frame::getWidth() const{
 	return width;
 }
 
 void Frame::PlaceFrame(int Ix, int Iy, Frame toPlaceFrame){
 	if (width > toPlaceFrame.getWidth())
 		if (height > toPlaceFrame.getHeight())
-			for (int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
-				for (int by = 0; by < toPlaceFrame.getHeight(); by++)
+			for (unsigned int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
+				for (unsigned int by = 0; by < toPlaceFrame.getHeight(); by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 		else
-			for (int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
-				for (int by = 0; by < height - Iy; by++)
+			for (unsigned int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
+				for (unsigned int by = 0; by < height - Iy; by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 	else
 		if (height > toPlaceFrame.getHeight())
-			for (int bx = 0; bx < width - Ix; bx++)
-				for (int by = 0; by < toPlaceFrame.getHeight(); by++)
+			for (unsigned int bx = 0; bx < width - Ix; bx++)
+				for (unsigned int by = 0; by < toPlaceFrame.getHeight(); by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 		else
-			for (int bx = 0; bx < width - Ix; bx++)
-				for (int by = 0; by < height - Iy; by++)
+			for (unsigned int bx = 0; bx < width - Ix; bx++)
+				for (unsigned int by = 0; by < height - Iy; by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 }
 
@@ -191,10 +179,10 @@ void Frame::PlaceBox(int Ix1, int Iy1, int Ix2, int Iy2, color bgcolor, color fg
 
 void Frame::PlaceGenTxt(int Ix, int Iy, std::string text, color bgcolor, color fgcolor){
 	if (width < text.size())
-		for (int i = 0; i < width; i++)
+		for (unsigned int i = 0; i < width; i++)
 			frame[Ix + i][Iy] = ColoredCharacter(bgcolor, fgcolor, text[i]);
 	else
-		for (int i = 0; i < text.size(); i++)
+		for (unsigned int i = 0; i < text.size(); i++)
 			frame[Ix + i][Iy] = ColoredCharacter(bgcolor, fgcolor, text[i]);
 }
 
@@ -338,44 +326,44 @@ void Frame::PlaceExampleMap(int Ix1, int Iy1){
 		for (int by = Iy1 + 1; by < y2; by++)
 			frame[bx][by] = grass;
 
-	frame[Ix1 + 4][Iy1 + 4] = dirt;
-	frame[Ix1 + 14][Iy1 + 3] = dirt;
-	frame[Ix1 + 8][Iy1 + 6] = dirt;
+	frame[Ix1 +  4][Iy1 +  4] = dirt;
+	frame[Ix1 + 14][Iy1 +  3] = dirt;
+	frame[Ix1 +  8][Iy1 +  6] = dirt;
 	frame[Ix1 + 15][Iy1 + 10] = dirt;
 	frame[Ix1 + 11][Iy1 + 15] = dirt;
-	frame[Ix1 + 30][Iy1 + 8] = dirt;
+	frame[Ix1 + 30][Iy1 +  8] = dirt;
 	frame[Ix1 + 25][Iy1 + 13] = dirt;
 	frame[Ix1 + 17][Iy1 + 11] = bush;
-	frame[Ix1 + 30][Iy1 + 8] = bush;
-	frame[Ix1 + 20][Iy1 + 2] = bush;
-	frame[Ix1 + 18][Iy1 + 1] = water;
-	frame[Ix1 + 17][Iy1 + 2] = water;
-	frame[Ix1 + 18][Iy1 + 2] = water;
-	frame[Ix1 + 18][Iy1 + 3] = water;
-	frame[Ix1 + 19][Iy1 + 3] = water;
-	frame[Ix1 + 17][Iy1 + 4] = water;
-	frame[Ix1 + 18][Iy1 + 4] = water;
-	frame[Ix1 + 16][Iy1 + 5] = water;
-	frame[Ix1 + 17][Iy1 + 5] = water;
-	frame[Ix1 + 15][Iy1 + 6] = water;
-	frame[Ix1 + 16][Iy1 + 6] = water;
-	frame[Ix1 + 15][Iy1 + 7] = water;
-	frame[Ix1 + 16][Iy1 + 7] = water;
-	frame[Ix1 + 13][Iy1 + 8] = water;
-	frame[Ix1 + 14][Iy1 + 8] = water;
-	frame[Ix1 + 15][Iy1 + 8] = water;
-	frame[Ix1 + 12][Iy1 + 9] = water;
-	frame[Ix1 + 13][Iy1 + 9] = water;
+	frame[Ix1 + 30][Iy1 +  8] = bush;
+	frame[Ix1 + 20][Iy1 +  2] = bush;
+	frame[Ix1 + 18][Iy1 +  1] = water;
+	frame[Ix1 + 17][Iy1 +  2] = water;
+	frame[Ix1 + 18][Iy1 +  2] = water;
+	frame[Ix1 + 18][Iy1 +  3] = water;
+	frame[Ix1 + 19][Iy1 +  3] = water;
+	frame[Ix1 + 17][Iy1 +  4] = water;
+	frame[Ix1 + 18][Iy1 +  4] = water;
+	frame[Ix1 + 16][Iy1 +  5] = water;
+	frame[Ix1 + 17][Iy1 +  5] = water;
+	frame[Ix1 + 15][Iy1 +  6] = water;
+	frame[Ix1 + 16][Iy1 +  6] = water;
+	frame[Ix1 + 15][Iy1 +  7] = water;
+	frame[Ix1 + 16][Iy1 +  7] = water;
+	frame[Ix1 + 13][Iy1 +  8] = water;
+	frame[Ix1 + 14][Iy1 +  8] = water;
+	frame[Ix1 + 15][Iy1 +  8] = water;
+	frame[Ix1 + 12][Iy1 +  9] = water;
+	frame[Ix1 + 13][Iy1 +  9] = water;
 	frame[Ix1 + 11][Iy1 + 10] = water;
 	frame[Ix1 + 12][Iy1 + 10] = water;
-	frame[Ix1 + 9][Iy1 + 11] = water;
+	frame[Ix1 +  9][Iy1 + 11] = water;
 	frame[Ix1 + 10][Iy1 + 11] = water;
 	frame[Ix1 + 11][Iy1 + 11] = water;
-	frame[Ix1 + 8][Iy1 + 12] = water;
-	frame[Ix1 + 9][Iy1 + 12] = water;
-	frame[Ix1 + 8][Iy1 + 13] = water;
-	frame[Ix1 + 9][Iy1 + 13] = water;
-	frame[Ix1 + 7][Iy1 + 14] = water;
-	frame[Ix1 + 8][Iy1 + 14] = water;
-	frame[Ix1 + 20][Iy1 + 9] = Player;
+	frame[Ix1 +  8][Iy1 + 12] = water;
+	frame[Ix1 +  9][Iy1 + 12] = water;
+	frame[Ix1 +  8][Iy1 + 13] = water;
+	frame[Ix1 +  9][Iy1 + 13] = water;
+	frame[Ix1 +  7][Iy1 + 14] = water;
+	frame[Ix1 +  8][Iy1 + 14] = water;
+	frame[Ix1 + 20][Iy1 +  9] = Player;
 }

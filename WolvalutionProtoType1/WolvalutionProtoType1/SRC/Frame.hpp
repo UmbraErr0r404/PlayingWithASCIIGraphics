@@ -7,6 +7,21 @@
  * printing informastion for a coloredable termail.
  */
 
+/*
+ * File local TODO list
+ * ====================
+ *
+ *  * move PlaceExampleMap to data file (or remove function)
+ *
+ *  * consolidate similar functions by separating out data
+ *    1. YouDied
+ *    2. YouWin
+ *    3. PlaceWhoAreYou
+ *    4. PlaceWindowMoonArt
+ *    5. PlaceWindowSceneArt
+ *    6. PlaceLogo
+ */
+
 #ifndef __FRAME_H_INCLUDED__   
 #define __FRAME_H_INCLUDED__  
 #include "Map.hpp"
@@ -15,11 +30,11 @@
 
 class Frame{
 private:
-	int x;
-	int y;
-	int height;
-	int width;
-	std::deque<std::deque<ColoredCharacter>> frame;
+	unsigned int x;
+	unsigned int y;
+	unsigned int height;
+	unsigned int width;
+	std::deque<std::deque<ColoredCharacter> > frame;
 	std::string name;
 
 	/**
@@ -55,12 +70,6 @@ public:
 	Frame(std::string Iname, int Ix, int Iy, Map AMap); 
 
 	/**
-	 * Copy construtor
-	 * @param Iframe The frame being copied.
-	 */
-	Frame(const Frame &Iframe);
-
-	/**
 	 * Turns the frame that called this function into a copy of the called file.
 	 * @param Ix The x postion where the frames thinks it will be printed.
 	 * @param Iy The y postion where the frames thinks it will be printed.
@@ -85,27 +94,27 @@ public:
 	/**
 	 * Gets this frame's name and returns it.
 	 */
-	std::string getName();
+	std::string getName() const;
 
 	/**
 	 * Gets this frame's X print location and returns it.
 	 */
-	int getX();
+	unsigned int getX() const;
 
 	/**
 	 * Gets this frame's Y print location and returns it.
 	 */
-	int getY();
+	unsigned int getY() const;
 
 	/**
 	 * Gets this frame's height and returns it.
 	 */
-	int getHeight();
+	unsigned int getHeight() const;
 
 	/**
 	 * Gets this frame's width and returns it.
 	 */
-	int getWidth();
+	unsigned int getWidth() const;
 
 	/**
 	 * Places the ColoredCharacters from the given frame onto
