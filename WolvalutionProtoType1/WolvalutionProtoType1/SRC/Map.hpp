@@ -13,7 +13,7 @@
 
 class Map{
 private:
-	std::deque<std::deque<MapSquare>> myMapSquares;
+	std::deque<std::deque<MapSquare> > myMapSquares;
 	const int WIDTH = 114; //constant map width
 	const int HEIGHT = 24; //constant map height
 	Player myPlayer = Player();
