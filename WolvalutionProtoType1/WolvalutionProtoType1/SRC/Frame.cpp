@@ -40,8 +40,8 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
 	ColoredCharacter MSPlayer(Black, Yellow, '@');
 	ColoredCharacter MUnknown(Black, Red, '?');
 
-	for (int bx = 0; bx < width; bx++)
-		for (int by = 0; by < height; by++){
+	for (unsigned int bx = 0; bx < width; bx++)
+		for (unsigned int by = 0; by < height; by++){
 			if (AMap.getMyPlayerXLocation() == bx && AMap.getMyPlayerYLocation() == by)
 				frame[bx][by] = MSPlayer;
 			else if (AMap[bx][by].getScenarioActive())
@@ -88,8 +88,8 @@ void Frame::ExportFrame(std::string fileName){
 	myfile << "Height " << height << " Width " 
 				 << width << " Name " << name << "\n";
 
-	for (int x = 0; x < width; x++)
-		for (int y = 0; y < height; y++)
+	for (unsigned int x = 0; x < width; x++)
+		for (unsigned int y = 0; y < height; y++)
 			myfile << "Char " << int(frame[x][y].getChar())
 						 << " BG " << frame[x][y].getBG() 
 						 << " FG " << frame[x][y].getFG() 
@@ -106,40 +106,40 @@ std::string Frame::getName() const{
 	return name;
 }
 
-int Frame::getX() const{
+unsigned int Frame::getX() const{
 	return x;
 }
 
-int Frame::getY() const{
+unsigned int Frame::getY() const{
 	return y;
 }
 
-int Frame::getHeight() const{
+unsigned int Frame::getHeight() const{
 	return height;
 }
 
-int Frame::getWidth() const{
+unsigned int Frame::getWidth() const{
 	return width;
 }
 
 void Frame::PlaceFrame(int Ix, int Iy, Frame toPlaceFrame){
 	if (width > toPlaceFrame.getWidth())
 		if (height > toPlaceFrame.getHeight())
-			for (int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
-				for (int by = 0; by < toPlaceFrame.getHeight(); by++)
+			for (unsigned int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
+				for (unsigned int by = 0; by < toPlaceFrame.getHeight(); by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 		else
-			for (int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
-				for (int by = 0; by < height - Iy; by++)
+			for (unsigned int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
+				for (unsigned int by = 0; by < height - Iy; by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 	else
 		if (height > toPlaceFrame.getHeight())
-			for (int bx = 0; bx < width - Ix; bx++)
-				for (int by = 0; by < toPlaceFrame.getHeight(); by++)
+			for (unsigned int bx = 0; bx < width - Ix; bx++)
+				for (unsigned int by = 0; by < toPlaceFrame.getHeight(); by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 		else
-			for (int bx = 0; bx < width - Ix; bx++)
-				for (int by = 0; by < height - Iy; by++)
+			for (unsigned int bx = 0; bx < width - Ix; bx++)
+				for (unsigned int by = 0; by < height - Iy; by++)
 					frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
 }
 
@@ -179,10 +179,10 @@ void Frame::PlaceBox(int Ix1, int Iy1, int Ix2, int Iy2, color bgcolor, color fg
 
 void Frame::PlaceGenTxt(int Ix, int Iy, std::string text, color bgcolor, color fgcolor){
 	if (width < text.size())
-		for (int i = 0; i < width; i++)
+		for (unsigned int i = 0; i < width; i++)
 			frame[Ix + i][Iy] = ColoredCharacter(bgcolor, fgcolor, text[i]);
 	else
-		for (int i = 0; i < text.size(); i++)
+		for (unsigned int i = 0; i < text.size(); i++)
 			frame[Ix + i][Iy] = ColoredCharacter(bgcolor, fgcolor, text[i]);
 }
 

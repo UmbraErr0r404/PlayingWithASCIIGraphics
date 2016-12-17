@@ -52,12 +52,12 @@ public:
 	/**
    *
    */
-	int getMyPlayerXLocation();
+	unsigned int getMyPlayerXLocation();
 
 	/**
    *
    */
-	int getMyPlayerYLocation();
+	unsigned int getMyPlayerYLocation();
 
 	/**
    *
