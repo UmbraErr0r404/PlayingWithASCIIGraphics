@@ -41,7 +41,7 @@ public:
 	 * Overloads the == operator for ColoredCharcter
 	 * @param CCcompare The ColorCharacter being compared too.
 	 */
-	bool operator== (const ColoredCharacter CCcompare);
+	bool operator== (const ColoredCharacter& CCcompare);
 
 	/**
 	 * Gets the character for this ColoredCharacter.
