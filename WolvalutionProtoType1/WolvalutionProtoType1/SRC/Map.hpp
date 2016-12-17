@@ -11,8 +11,7 @@
 #include "MapSquare.hpp"
 #include "Player.hpp"
 
-class Map
-{
+class Map{
 private:
    std::deque<std::deque<MapSquare>> myMapSquares;
    const int WIDTH = 114; //constant map width

@@ -14,8 +14,7 @@
  */
 #define ColorCode(bg, fg) ((int(bg) * 0x10) + int(fg)) 
 
-enum color
-{
+enum color{
 	Black       =0x0,
 	DarkBlue    =0x1,
 	DarkGreen   =0x2,

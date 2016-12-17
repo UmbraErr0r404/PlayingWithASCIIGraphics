@@ -13,8 +13,7 @@
 #include <string>
 #include <deque>
 
-class Frame
-{
+class Frame{
 private:
    int x;
    int y;

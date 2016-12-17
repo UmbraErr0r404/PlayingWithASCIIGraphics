@@ -13,8 +13,7 @@
 #include <string>
 #include "Option.hpp"
 
-class Scenario
-{
+class Scenario{
 private:
    std::string myDescription;
    Option myOption1, myOption2, myOption3, myOption4;

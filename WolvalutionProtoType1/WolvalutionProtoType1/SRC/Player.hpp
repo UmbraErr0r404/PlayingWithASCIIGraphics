@@ -11,8 +11,7 @@
 #include <deque>
 #include <string>
 
-class Player
-{
+class Player{
 private:
    static const int MAX_HEALTH = 48;
    static const int MAX_STAMINA = 47;

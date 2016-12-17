@@ -12,8 +12,7 @@
 #include "ColoredCharacter.hpp"
 #include "Scenario.hpp"
 
-class MapSquare
-{
+class MapSquare{
 private:
    bool walkable;
    Scenario myScenario;

@@ -3,8 +3,7 @@
 #include <deque>
 #include "ColoredCharacter.hpp"
 
-WindowsConsole::WindowsConsole()
-{
+WindowsConsole::WindowsConsole(){
    CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
    AllocConsole();
    std::wstring strW = L"Wolvalution";
@@ -17,8 +16,7 @@ WindowsConsole::WindowsConsole()
    ResizeConsolePixel(1000, 2000);
 };
 
-void WindowsConsole::txtCC(std::string text, int colorCode = White)
-{
+void WindowsConsole::txtCC(std::string text, int colorCode = White){
    HANDLE hstdin = GetStdHandle(STD_INPUT_HANDLE);
    HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
    WORD   index = 0;
@@ -30,8 +28,7 @@ void WindowsConsole::txtCC(std::string text, int colorCode = White)
    SetConsoleTextAttribute(hstdout, csbi.wAttributes);
 }
 
-void WindowsConsole::CCC(char c, int colorCode = White)
-{
+void WindowsConsole::CCC(char c, int colorCode = White){
    HANDLE hstdin = GetStdHandle(STD_INPUT_HANDLE);
    HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
    WORD   index = 0;
@@ -43,21 +40,18 @@ void WindowsConsole::CCC(char c, int colorCode = White)
    SetConsoleTextAttribute(hstdout, csbi.wAttributes);
 }
 
-void WindowsConsole::SetCursor(int Ix, int Iy)
-{
+void WindowsConsole::SetCursor(int Ix, int Iy){
    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
    COORD homeCoords = { Ix, Iy };
    SetConsoleCursorPosition(hStdOut, homeCoords);
 }
 
-void WindowsConsole::ChangeCursorVisibility(bool visibility) //could just be a toggle function?
-{
+void WindowsConsole::ChangeCursorVisibility(bool visibility) //could just be a toggle function?{
    CursorVisibility = visibility;
    //https://msdn.microsoft.com/en-us/library/windows/desktop/ms686019(v=vs.85).aspx
 }
 
-void WindowsConsole::GetConsoleData()
-{
+void WindowsConsole::GetConsoleData(){
    HWND console = GetConsoleWindow();
    RECT r;
    //stores the console's current dimensions
@@ -65,21 +59,18 @@ void WindowsConsole::GetConsoleData()
    GetWindowRect(console, &r);
 }
 
-void WindowsConsole::ResizeConsolePixel(int height, int width)
-{
+void WindowsConsole::ResizeConsolePixel(int height, int width){
    HWND console = GetConsoleWindow();
    MoveWindow(console, 0, 0, width, height, true);
 }
 
-void WindowsConsole::ResizeConsoleBufferSize(int height, int width)
-{
+void WindowsConsole::ResizeConsoleBufferSize(int height, int width){
    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
    COORD ScreenSize = { width, height };
    SetConsoleScreenBufferSize(hStdOut, ScreenSize);
 }
 
-void WindowsConsole::ChangeConsoleFont(int colorcode)
-{
+void WindowsConsole::ChangeConsoleFont(int colorcode){
    //changes color
    HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
    SetConsoleTextAttribute(hstdout, colorcode);
@@ -95,25 +86,21 @@ void WindowsConsole::ChangeConsoleFont(int colorcode)
    SetConsoleTextAttribute(outcon, colorcode);
 }
 
-void WindowsConsole::ChangeConsoleTextSize()
-{
+void WindowsConsole::ChangeConsoleTextSize(){
    //GetConsoleMode?
    //SetConsoleCursorInfo
    //get function?
    //SetConsoleWindowInfo();
 }
 
-void WindowsConsole::ReturnConsole()
-{
+void WindowsConsole::ReturnConsole(){
    //returns postions back to the way it way before game started
    //MoveWindow(console, r.left, r.top, r.right - r.left, r.bottom - r.top, TRUE);
 }
 
-void WindowsConsole::ClearScreen()
-{
+void WindowsConsole::ClearScreen(){
    for (int bx = 0; bx < WIDTH; bx++)
-      for (int by = 0; by < HEIGHT; by++)
-      {
+      for (int by = 0; by < HEIGHT; by++){
          CurrentConsoleDisplay[bx][by] = ColoredCharacter(Black, Black, ' ');
          BufferConsoleDisplay[bx][by] = ColoredCharacter(Black, Black, ' ');
       }
@@ -121,36 +108,31 @@ void WindowsConsole::ClearScreen()
    for (int x = 0; x < WIDTH; x++)
       blank = blank + " ";
 
-   for (int y = 0; y < HEIGHT; y++)
-   {
+   for (int y = 0; y < HEIGHT; y++){
       SetCursor(0, 0 + y);
       std::cout << blank;
    }
 }
 
-void WindowsConsole::PrintCurrentMap(int Ix, int Iy, Screen IScreen) //check later
-{
+void WindowsConsole::PrintCurrentMap(int Ix, int Iy, Screen IScreen) //check later{
    if (IScreen.CurrentMap().getName() == "Error")
       ;//do nothing
    else
       PrintFrame(Ix, Iy, IScreen.CurrentMap());
 }
 
-void WindowsConsole::PrintFrame(int Ix, int Iy, Frame Iframe)
-{
+void WindowsConsole::PrintFrame(int Ix, int Iy, Frame Iframe){
    for (int by = 0; by < Iframe.getHeight(); by++)
       for (int bx = 0; bx < Iframe.getWidth(); bx++)
          PrintColoredCharacter(Ix + bx, Iy + by, Iframe[bx][by]);
 }
 
-void WindowsConsole::PrintColoredCharacter(int Ix, int Iy, ColoredCharacter Ic)
-{
+void WindowsConsole::PrintColoredCharacter(int Ix, int Iy, ColoredCharacter Ic){
    BufferConsoleDisplay[Ix][Iy] = Ic;
 
    if (CurrentConsoleDisplay[Ix][Iy] == BufferConsoleDisplay[Ix][Iy])
       ;//do nothing
-   else
-   {
+   else{
       SetCursor(Ix, Iy);
       CCC(Ic.getChar(), ColorCode(Ic.getBG(), Ic.getFG()));
       CurrentConsoleDisplay[Ix][Iy] = Ic;
@@ -158,18 +140,15 @@ void WindowsConsole::PrintColoredCharacter(int Ix, int Iy, ColoredCharacter Ic)
 
 }
 
-void WindowsConsole::PrintScreen(Screen aScreen)
-{
-   for (int i = 0; i < aScreen.printOrderLength(); i++)
-   {
+void WindowsConsole::PrintScreen(Screen aScreen){
+   for (int i = 0; i < aScreen.printOrderLength(); i++){
       Frame Temp(aScreen.PopFrameFront());
       PrintFrame(Temp.getX(), Temp.getY(), Temp);
       aScreen.PushFrameBack(Temp);
    }
 }
 
-void WindowsConsole::PrintMap(int Ix, int Iy, Map aMap)
-{
+void WindowsConsole::PrintMap(int Ix, int Iy, Map aMap){
    Frame tempM("aMap", Ix, Iy, aMap);
    PrintFrame(Ix, Iy, tempM);
 }

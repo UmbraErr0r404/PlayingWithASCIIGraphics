@@ -13,8 +13,7 @@
 
 #include <string>
 
-class Option
-{
+class Option{
 private:
    int myHealthChange;
    int myStaminaChange;

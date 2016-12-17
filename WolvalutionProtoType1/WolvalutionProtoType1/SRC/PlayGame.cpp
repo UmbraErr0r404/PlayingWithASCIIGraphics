@@ -8,8 +8,7 @@
 #include "MapSquare.hpp"
 #include "Map.hpp"
 
-int main(int argc, char * argv[])
-{ 
+int main(int argc, char * argv[]){ 
    WindowsConsole Console;
    Frame HomeBase;
          HomeBase.ImportFrame(0, 0, "HomeScreen.txt", "HomeBase");
@@ -57,49 +56,32 @@ int main(int argc, char * argv[])
    bool QuitSelect = false;
    bool PlaySelect = true;
 
-   while (HomeSelecting)
-   {
+   while (HomeSelecting){
       key = getch();
-      if (key == 'w' || key == 'W') //w key
-      {
+      if (key == 'w' || key == 'W'){
          if (QuitSelect)
-         {
-            Console.PrintFrame(PlaySelected.getX(), PlaySelected.getY(), PlaySelected);
+					  Console.PrintFrame(PlaySelected.getX(), PlaySelected.getY(), PlaySelected);
             QuitSelect = false;
             PlaySelect = true;
-         }
-         else if (PlaySelect)
-         {
-            Console.PrintFrame(QuitSelected.getX(), QuitSelected.getY(), QuitSelected);
+				 else if (PlaySelect)
+					  Console.PrintFrame(QuitSelected.getX(), QuitSelected.getY(), QuitSelected);
             QuitSelect = true;
             PlaySelect = false;
-         }
-      }
-      if (key == 's' || key == 'S') //s key
-      {
+			}else if (key == 's' || key == 'S'){
+      
          if (QuitSelect)
-         {
-            Console.PrintFrame(PlaySelected.getX(), PlaySelected.getY(), PlaySelected);
+					  Console.PrintFrame(PlaySelected.getX(), PlaySelected.getY(), PlaySelected);
             QuitSelect = false;
             PlaySelect = true;
-         }
          else if (PlaySelect)
-         {
-            Console.PrintFrame(QuitSelected.getX(), QuitSelected.getY(), QuitSelected);
+					  Console.PrintFrame(QuitSelected.getX(), QuitSelected.getY(), QuitSelected);
             QuitSelect = true;
             PlaySelect = false;
-         }
-      }
-      if (key == 32 || key == 13) //space-bar or enter
-      {
+			}else if (key == 32 || key == 13){ //space-bar or enter
          if (QuitSelect)
-         {
             return 0;
-         }
          else if (PlaySelect)
-         {
             HomeSelecting = false;
-         }
       }
    }
 
@@ -130,8 +112,7 @@ int main(int argc, char * argv[])
    bool MenuOpen = false;
    bool OptionMenu = false;
 
-   while (PlayGame)
-   {
+   while (PlayGame){
       Console.SetCursor(14, 33);
       Console.txtCC("                                                                                                     ", ColorCode(Black, Purple));
       Console.SetCursor(14, 33);
@@ -140,86 +121,70 @@ int main(int argc, char * argv[])
       Console.SetCursor(62, 1);
       Console.txtCC("Walking      ", ColorCode(Black, Purple));
 
-      for (int mh = 0; mh < IAmMap.getPlayerMAXHEALTH(); mh++)
-      {
+      for (int mh = 0; mh < IAmMap.getPlayerMAXHEALTH(); mh++){
          Console.SetCursor(9 + mh, 30);
          Console.CCC(' ', ColorCode(Black, Red));
       }
-      for (int h = 0; h < IAmMap.getPlayerCurrentHealth(); h++)
-      {
+      for (int h = 0; h < IAmMap.getPlayerCurrentHealth(); h++){
          Console.SetCursor(9 + h, 30);
          Console.CCC(char(219), ColorCode(Black, Red));
       }
-      for (int ms = 0; ms < IAmMap.getPlayerMAXSTAMINA(); ms++)
-      {
+      for (int ms = 0; ms < IAmMap.getPlayerMAXSTAMINA(); ms++){
          Console.SetCursor(71 + ms, 30);
          Console.CCC(' ', ColorCode(Black, Green));
       }
-      for (int h = 0; h < IAmMap.getPlayerMAXSTAMINA() - IAmMap.getPlayerCurrentStamina(); h++)
-      {
+      for (int h = 0; h < IAmMap.getPlayerMAXSTAMINA() - IAmMap.getPlayerCurrentStamina(); h++){
          Console.SetCursor(71 + h, 30);
          Console.CCC(char(219), ColorCode(Black, Green));
       }
 
-      while (walking)
-      {
+      while (walking){
          key = getch();
-         if (key == 'w' || key == 'W') //w key to move north
-         {
+         if (key == 'w' || key == 'W'){ //w key to move north
             IAmMap.MovePlayerNorth();
             Console.PrintMap(3, 4, IAmMap);
          }
-         if (key == 's' || key == 'S') //s key to move south
-         {
+         if (key == 's' || key == 'S'){ //s key to move south
             IAmMap.MovePlayerSouth();
             Console.PrintMap(3, 4, IAmMap);
          }
-         if (key == 'a' || key == 'A') //a key to move west
-         {
+         if (key == 'a' || key == 'A'){ //a key to move west
             IAmMap.MovePlayerWest();
             Console.PrintMap(3, 4, IAmMap);
          }
-         if (key == 'd' || key == 'D') //d key to move east
-         {
+         if (key == 'd' || key == 'D'){ //d key to move east
             IAmMap.MovePlayerEast();
             Console.PrintMap(3, 4, IAmMap);
          }
-         if (key == 'h' || key == 'H') //h key
-         {
+         if (key == 'h' || key == 'H'){ //h key
             Console.PrintFrame(HelpMenu.getX(), HelpMenu.getY(), HelpMenu);
             MenuOpen = true;
-            while (MenuOpen)
-            {
+            while (MenuOpen){
                key = getch();
                if (key == 'h' || key == 'H') //h key
                   MenuOpen = false;
             }
             Console.PrintMap(3, 4, IAmMap);
          }
-         if (key == 'i' || key == 'I') //i key
-         {
+         if (key == 'i' || key == 'I'){ //i key
             Console.PrintFrame(Inventory.getX(), Inventory.getY(), Inventory);bool MenuOpen = true;
             MenuOpen = true;
-            while (MenuOpen)
-            {
+            while (MenuOpen){
                key = getch();
                if (key == 'i' || key == 'I') //h key
                   MenuOpen = false;
             }
             Console.PrintMap(3, 4, IAmMap);
          }
-         if (key == 'q' || key == 'Q') //q key
-         {
+         if (key == 'q' || key == 'Q'){ //q key
             Console.PrintFrame(QuitMenuYes.getX(), QuitMenuYes.getY(), QuitMenuYes);     
             bool YesSelect = true;
             bool NoSelect = false;
             MenuOpen = true;
-            while (MenuOpen)
-            {
+            while (MenuOpen){
                key = getch();
-               if (key == 'A' || key == 'a' || key == 'D' || key == 'd') //h key
-               {
-                  YesSelect = !YesSelect;
+               if (key == 'A' || key == 'a' || key == 'D' || key == 'd'){ //h key
+								  YesSelect = !YesSelect;
                   NoSelect = !NoSelect;
                   if(YesSelect)
                      Console.PrintFrame(QuitMenuYes.getX(), QuitMenuYes.getY(), QuitMenuYes);
@@ -257,10 +222,8 @@ int main(int argc, char * argv[])
                              IAmMap.getPlayerMapSquare().getScenario().getMyOption4() };
       int currentOption = 0;
 
-      while(OptionMenu)
-      {
-         for (int olist = 0; olist < 4; olist++)
-         {
+      while(OptionMenu){
+         for (int olist = 0; olist < 4; olist++){
             Console.SetCursor(6, 41 + (2 * olist));
             if (OptionListB[olist])
                Console.txtCC(OptionListO[olist].getMyText(), ColorCode(Yellow, Black));
@@ -268,31 +231,23 @@ int main(int argc, char * argv[])
                Console.txtCC(OptionListO[olist].getMyText(), ColorCode(Black, Purple));
          }
          key = getch();
-         if (key == 'W' || key == 'w') //Up
-         {
+         if (key == 'W' || key == 'w'){ //Up
             OptionListB[currentOption] = false;
-            if (currentOption == 0)
-            {
+            if (currentOption == 0){
                currentOption = 3;
                OptionListB[currentOption] = true;
-            }
-            else
-            {
+            }else{
                currentOption--;
                OptionListB[currentOption] = true;
             }
          }
-         if (key == 'S' || key == 's') //Down
-         {
+         if (key == 'S' || key == 's'){ //Down
             OptionListB[currentOption] = false;
-            if (currentOption == 3)
-            {
-               currentOption = 0;
+            if (currentOption == 3){
+							 currentOption = 0;
                OptionListB[currentOption] = true;
-            }
-            else
-            {
-               currentOption++;
+						}else{
+							 currentOption++;
                OptionListB[currentOption] = true;
             }
          }
@@ -301,8 +256,7 @@ int main(int argc, char * argv[])
       }//end of option menu
       Console.SetCursor(18, 37);
       Console.txtCC("                                                                                                   ", ColorCode(Black, Purple));
-      for (int olist = 0; olist < 4; olist++)
-      {
+      for (int olist = 0; olist < 4; olist++){
          Console.SetCursor(6, 41 + (2 * olist));
          Console.txtCC("                                                                                                             ", ColorCode(Black, Purple));
       }
@@ -312,8 +266,7 @@ int main(int argc, char * argv[])
       walking = true;
 
       for (int olist = 0; olist < 4; olist++)
-         if (OptionListB[olist])
-         {
+         if (OptionListB[olist]){
             if (OptionListO[olist].getHealthChange() + IAmMap.getPlayerCurrentHealth() <= IAmMap.getPlayerMAXHEALTH())
                IAmMap.modifyPlayerHealth(OptionListO[olist].getHealthChange());
             else

@@ -27,8 +27,7 @@
 #include <time.h>
 #include <stdlib.h> //for using the function sleep
 
-class WindowsConsole
-{
+class WindowsConsole{
 private:
    const static int HEIGHT = 50;
    const static int WIDTH = 120;

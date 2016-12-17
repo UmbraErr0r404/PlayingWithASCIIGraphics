@@ -1,7 +1,6 @@
 #include "Option.hpp"
 
-Option::Option()
-{
+Option::Option(){
    myHealthChange = 0;
    myStaminaChange = 0;
    myItem = "NaI";
@@ -9,8 +8,7 @@ Option::Option()
    isSeletced = false;
 }
 
-Option::Option(int HC, int SC, std::string item, std::string def, bool selected)
-{
+Option::Option(int HC, int SC, std::string item, std::string def, bool selected){
    myHealthChange = HC;
    myStaminaChange = SC;
    myItem = item;
@@ -18,22 +16,18 @@ Option::Option(int HC, int SC, std::string item, std::string def, bool selected)
    isSeletced = selected;
 }
 
-int Option::getHealthChange()
-{
+int Option::getHealthChange(){
    return myHealthChange;
 }
 
-int Option::getStaminaChange()
-{
+int Option::getStaminaChange(){
    return myStaminaChange;
 }
 
-std::string Option::getMyItem()
-{
+std::string Option::getMyItem(){
    return myItem;
 }
 
-std::string Option::getMyText()
-{
+std::string Option::getMyText(){
    return myText;
 }

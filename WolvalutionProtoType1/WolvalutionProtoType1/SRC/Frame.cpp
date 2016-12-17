@@ -5,27 +5,22 @@
 #include <iostream>
 #include <fstream>
 
-void Frame::ResizeFrame(int Iwidth, int Iheight)
-{ 
+void Frame::ResizeFrame(int Iwidth, int Iheight){ 
    frame.clear();
-   for (int tx = 0; tx < Iwidth; tx++)
-   {
+   for (int tx = 0; tx < Iwidth; tx++){
       frame.push_back(std::deque<ColoredCharacter>());
-      for (int ty = 0; ty < Iheight; ty++)
-      {
+      for (int ty = 0; ty < Iheight; ty++){
          frame[tx].push_back(ColoredCharacter());
       }
    } 
 }
 
-Frame::Frame()
-{
+Frame::Frame(){
    name = "DefaultFrame";  x = 0; y = 0; height = 0; width = 0;
    ResizeFrame(0, 0);
 };
 
-Frame::Frame(std::string Iname, int Ix, int Iy, int const Iheight, int const Iwidth)
-{
+Frame::Frame(std::string Iname, int Ix, int Iy, int const Iheight, int const Iwidth){
    name = Iname;
    x = Ix;
    y = Iy;
@@ -34,8 +29,7 @@ Frame::Frame(std::string Iname, int Ix, int Iy, int const Iheight, int const Iwi
    ResizeFrame(Iwidth, Iheight);
 }
 
-Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap)
-{
+Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
    x = Ix;
    y = Iy;
    name = Iname;
@@ -47,8 +41,7 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap)
    ColoredCharacter MUnknown(Black, Red, '?');
 
    for (int bx = 0; bx < width; bx++)
-      for (int by = 0; by < height; by++)
-      {
+      for (int by = 0; by < height; by++){
          if (AMap.getMyPlayerXLocation() == bx && AMap.getMyPlayerYLocation() == by)
             frame[bx][by] = MSPlayer;
          else if (AMap[bx][by].getScenarioActive())
@@ -58,8 +51,7 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap)
       }
 };
 
-Frame::Frame(const Frame &Iframe)
-{
+Frame::Frame(const Frame &Iframe){
    x = Iframe.x;
    y = Iframe.y;
    height = Iframe.height;
@@ -71,8 +63,7 @@ Frame::Frame(const Frame &Iframe)
          frame[i][k] = Iframe.frame[i][k];
 }
 
-void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string newFrameName)
-{
+void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string newFrameName){
    std::ifstream myfile;
    myfile.open(fileName);
 
@@ -89,21 +80,20 @@ void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string 
    x = Ix;
    y = Iy;
 
-   for (int bx = 0; bx < fWidth; bx++)
-      for (int by = 0; by < fHeight; by++)
-      {
+   for (int bx = 0; bx < fWidth; bx++){
+      for (int by = 0; by < fHeight; by++){
          myfile >> nom >> charNum >> nom >> fBG >> nom >> fFG;
          color nfFG = color(fFG);
          color nfBG = color(fBG);
          ColoredCharacter temp( nfBG, nfFG , char(charNum) );
          frame[bx][by] = temp;
       }
-
+	 }
+	 
    myfile.close();
 }
 
-void Frame::ExportFrame(std::string fileName)
-{
+void Frame::ExportFrame(std::string fileName){
    std::ofstream myfile;
 
    myfile.open(fileName);
@@ -120,40 +110,32 @@ void Frame::ExportFrame(std::string fileName)
    myfile.close();
 }
 
-std::deque<ColoredCharacter>& Frame::operator[](const int index)
-{
+std::deque<ColoredCharacter>& Frame::operator[](const int index){
    return frame[index];
 }
 
-std::string Frame::getName()
-{
+std::string Frame::getName(){
    return name;
 }
 
-int Frame::getX()
-{
+int Frame::getX(){
    return x;
 }
 
-int Frame::getY()
-{
+int Frame::getY(){
    return y;
 }
 
-int Frame::getHeight()
-{
+int Frame::getHeight(){
    return height;
 }
 
-int Frame::getWidth()
-{
+int Frame::getWidth(){
    return width;
 }
 
-void Frame::PlaceFrame(int Ix, int Iy, Frame toPlaceFrame)
-{
+void Frame::PlaceFrame(int Ix, int Iy, Frame toPlaceFrame){
    if (width > toPlaceFrame.getWidth())
-   {
       if (height > toPlaceFrame.getHeight())
          for (int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
             for (int by = 0; by < toPlaceFrame.getHeight(); by++)
@@ -162,9 +144,7 @@ void Frame::PlaceFrame(int Ix, int Iy, Frame toPlaceFrame)
          for (int bx = 0; bx < toPlaceFrame.getWidth(); bx++)
             for (int by = 0; by < height - Iy; by++)
                frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
-   }
    else
-   {
       if (height > toPlaceFrame.getHeight())
          for (int bx = 0; bx < width - Ix; bx++)
             for (int by = 0; by < toPlaceFrame.getHeight(); by++)
@@ -173,35 +153,26 @@ void Frame::PlaceFrame(int Ix, int Iy, Frame toPlaceFrame)
          for (int bx = 0; bx < width - Ix; bx++)
             for (int by = 0; by < height - Iy; by++)
                frame[bx + Ix][by + Iy] = toPlaceFrame[bx][by];
-   }
 }
 
-void Frame::PlaceHLine(int Ix, int Iy, int length, color bgcolor, color fgcolor)
-{
+void Frame::PlaceHLine(int Ix, int Iy, int length, color bgcolor, color fgcolor){
    ColoredCharacter HBar(bgcolor, fgcolor, char(196));
    for (int i = 0; i < length; i++)
-   {
       frame[Ix + i][Iy] = HBar;
-   }
 }
 
-void Frame::PlaceVLine(int Ix, int Iy, int length, color bgcolor, color fgcolor)
-{
+void Frame::PlaceVLine(int Ix, int Iy, int length, color bgcolor, color fgcolor){
    ColoredCharacter HBar(bgcolor, fgcolor, char(179));
    for (int i = 0; i < length; i++)
-   {
       frame[Ix][Iy + i] = HBar;
-   }
 }
 
-void Frame::PlaceChar(int Ix, int Iy, char c, color bgcolor, color fgcolor)
-{
+void Frame::PlaceChar(int Ix, int Iy, char c, color bgcolor, color fgcolor){
    ColoredCharacter HBar(bgcolor, fgcolor, c);
    frame[Ix][Iy] = HBar;
 }
 
-void Frame::PlaceBox(int Ix1, int Iy1, int Ix2, int Iy2, color bgcolor, color fgcolor)
-{
+void Frame::PlaceBox(int Ix1, int Iy1, int Ix2, int Iy2, color bgcolor, color fgcolor){
    ColoredCharacter TopLeftCorner(bgcolor, fgcolor, char(218));
    ColoredCharacter TopRightCorner(bgcolor, fgcolor, char(191));
    ColoredCharacter BottomLeftCorner(bgcolor, fgcolor, char(192));
@@ -218,24 +189,16 @@ void Frame::PlaceBox(int Ix1, int Iy1, int Ix2, int Iy2, color bgcolor, color fg
    PlaceHLine(Ix1 + 1, Iy2, Ix2 - 1 - Ix1, bgcolor, fgcolor);
 }
 
-void Frame::PlaceGenTxt(int Ix, int Iy, std::string text, color bgcolor, color fgcolor)
-{
+void Frame::PlaceGenTxt(int Ix, int Iy, std::string text, color bgcolor, color fgcolor){
    if (width < text.size())
-   {
       for (int i = 0; i < width; i++)
-      {
          frame[Ix + i][Iy] = ColoredCharacter(bgcolor, fgcolor, text[i]);
-      }
-   }
    else
       for (int i = 0; i < text.size(); i++)
-      {
          frame[Ix + i][Iy] = ColoredCharacter(bgcolor, fgcolor, text[i]);
-      }
 }
 
-void Frame::PlaceLogo(int Ix, int Iy, color bgcolor, color fgcolor)
-{
+void Frame::PlaceLogo(int Ix, int Iy, color bgcolor, color fgcolor){
    std::deque<std::string> lines;
    lines.push_back(" _        _            _                      _              _                          ");
    lines.push_back("| |      | |          | |                    | |           _| |_                        ");
@@ -245,13 +208,10 @@ void Frame::PlaceLogo(int Ix, int Iy, color bgcolor, color fgcolor)
    lines.push_back("|___/  \\___|  \\____/  |_|   \\__/    \\____/_| |_|  \\____/    \\__|  |_|  \\____/  |__|  |_|");
 
    for (auto&line : lines)
-   {
       PlaceGenTxt(Ix, Iy++, line, bgcolor, fgcolor);
-   }
 }
 
-void Frame::PlaceWindowSceneArt(int Ix, int Iy, color bgcolor, color fgcolor)
-{
+void Frame::PlaceWindowSceneArt(int Ix, int Iy, color bgcolor, color fgcolor){
    std::deque<std::string> lines;
    lines.push_back("                                                                                          | ");
    lines.push_back("                                                             _______________________      | ");
@@ -284,13 +244,10 @@ void Frame::PlaceWindowSceneArt(int Ix, int Iy, color bgcolor, color fgcolor)
    lines.push_back("                                                                                                         .");
 
    for (auto&line : lines) 
-   {
       PlaceGenTxt(Ix, Iy++, line, bgcolor, fgcolor);
-   }
 }
 
-void Frame::PlaceWindowMoonArt(int Ix, int Iy, color bgcolor, color fgcolor)
-{
+void Frame::PlaceWindowMoonArt(int Ix, int Iy, color bgcolor, color fgcolor){
    std::deque<std::string> moon;
    moon.push_back("   ___ ");
    moon.push_back(" ,',.(`");
@@ -314,17 +271,13 @@ void Frame::PlaceWindowMoonArt(int Ix, int Iy, color bgcolor, color fgcolor)
 
    Iy += 3;
    for (auto&line : moon) 
-   {
       PlaceGenTxt(Ix + 75, Iy++, line, bgcolor, fgcolor);
-   }
    Iy += 15;
-   for (auto&line : wshadow) {
+   for (auto&line : wshadow)
       PlaceGenTxt(Ix, Iy++, line, bgcolor, fgcolor);
-   }
 }
 
-void Frame::PlaceWhoAreYou(int Ix, int Iy, color bgcolor, color fgcolor)
-{
+void Frame::PlaceWhoAreYou(int Ix, int Iy, color bgcolor, color fgcolor){
    std::deque<std::string> lines;
 
    lines.push_back(" _        _   _                                                                   ___");
@@ -337,13 +290,10 @@ void Frame::PlaceWhoAreYou(int Ix, int Iy, color bgcolor, color fgcolor)
    lines.push_back("                                                          |___ /");
 
    for (auto&line : lines)
-   {
       PlaceGenTxt(Ix, Iy++, line, bgcolor, fgcolor);
-   }
 }
 
-void Frame::YouWin(int Ix, int Iy, color bgcolor, color fgcolor)
-{
+void Frame::YouWin(int Ix, int Iy, color bgcolor, color fgcolor){
    std::deque<std::string> lines;
 
    lines.push_back(".%%..%%...%%%%...%%..%%..........%%...%%...%%%%...%%..%%.");
@@ -353,15 +303,12 @@ void Frame::YouWin(int Ix, int Iy, color bgcolor, color fgcolor)
    lines.push_back("...%%.....%%%%....%%%%............%%.%%....%%%%...%%..%%.");
 
    for (auto&line : lines)
-   {
       PlaceGenTxt(Ix, Iy++, line, bgcolor, fgcolor);
-   }
 }
 
 
 
-void Frame::YouDied(int Ix, int Iy, color bgcolor, color fgcolor)
-{
+void Frame::YouDied(int Ix, int Iy, color bgcolor, color fgcolor){
    std::deque<std::string> lines;
 
    lines.push_back(".%%..%%...%%%%...%%..%%..........%%%%%...%%%%%%..%%%%%%..%%%%%..");
@@ -371,14 +318,10 @@ void Frame::YouDied(int Ix, int Iy, color bgcolor, color fgcolor)
    lines.push_back("...%%.....%%%%....%%%%...........%%%%%...%%%%%%..%%%%%%..%%%%%..");
 
    for (auto&line : lines)
-   {
       PlaceGenTxt(Ix, Iy++, line, bgcolor, fgcolor);
-   }
-
 }
 
-void Frame::PlaceExampleMap(int Ix1, int Iy1)
-{
+void Frame::PlaceExampleMap(int Ix1, int Iy1){
    int x2 = Ix1 + 34;
    int y2 = Iy1 + 20;
    PlaceBox(Ix1, Iy1, x2, y2, Black, DarkYellow);

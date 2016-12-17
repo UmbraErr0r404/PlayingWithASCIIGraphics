@@ -15,8 +15,7 @@
 #include <string>
 #include <deque>
 
-class Screen
-{
+class Screen{
 private:
    const static int HEIGHT = 50;
    const static int WIDTH = 120;

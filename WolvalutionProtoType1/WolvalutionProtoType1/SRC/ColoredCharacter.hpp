@@ -12,8 +12,7 @@
 
 #include "ColorData.hpp"
 
-class ColoredCharacter
-{
+class ColoredCharacter{
 private:
    char c;
    color bg, fg; //background and forgound color

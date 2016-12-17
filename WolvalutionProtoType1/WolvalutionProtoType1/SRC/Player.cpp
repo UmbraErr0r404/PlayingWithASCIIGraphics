@@ -1,7 +1,6 @@
 #include "Player.hpp"
 
-Player::Player()
-{
+Player::Player(){
    myHealth = MAX_HEALTH;
    myStamina = MAX_STAMINA;
    myXLocation = 4;
@@ -9,45 +8,36 @@ Player::Player()
    std::string myName = "Joe";
 }
 
-void Player::modifyHealth(int num)
-{
+void Player::modifyHealth(int num){
    myHealth = myHealth + num;
 }
 
-void Player::modifyStamina(int num)
-{
+void Player::modifyStamina(int num){
    myStamina = myStamina + num;
 }
 
-int Player::getHealth()
-{
+int Player::getHealth(){
    return myHealth;
 }
 
-int Player::getStamina()
-{
+int Player::getStamina(){
    return myStamina;
 }
 
-int Player::getXLocation()
-{
+int Player::getXLocation(){
    return myXLocation;
 }
 
-int Player::getYLocation()
-{
+int Player::getYLocation(){
    return myYLocation;
 }
 
-std::string Player::getName()
-{
+std::string Player::getName(){
    return myName;
 }
 
-int Player::searchItems(std::string item)
-{
-   for (int i = 0; i < inventory.size(); i++)
-   {
+int Player::searchItems(std::string item){
+   for (int i = 0; i < inventory.size(); i++){
       if (inventory[i] == item)
          return i;
       else
@@ -55,45 +45,37 @@ int Player::searchItems(std::string item)
    }
 }
 
-void Player::givePlayerItem(std::string item)
-{
+void Player::givePlayerItem(std::string item){
    inventory.push_back(item);
 }
 
-std::string Player::removeItem(int index)
-{
+std::string Player::removeItem(int index){
    std::string temp = inventory[index];
    inventory[index].erase();
    return temp;
 }
 
-void Player::movePlayerNorth()
-{
+void Player::movePlayerNorth(){
    myYLocation = myYLocation - 1;
 }
 
-void Player::movePlayerSouth()
-{
+void Player::movePlayerSouth(){
    myYLocation = myYLocation + 1;
 }
 
-void Player::movePlayerEast()
-{
+void Player::movePlayerEast(){
    myXLocation = myXLocation + 1;
 }
 
-void Player::movePlayerWest()
-{
+void Player::movePlayerWest(){
    myXLocation = myXLocation - 1;
 }
 
-int Player::getMAXHEALTH()
-{
+int Player::getMAXHEALTH(){
    return MAX_HEALTH;
 }
 
-int Player::getMAXSTAMINA()
-{
+int Player::getMAXSTAMINA(){
    return MAX_STAMINA;
 }
 
