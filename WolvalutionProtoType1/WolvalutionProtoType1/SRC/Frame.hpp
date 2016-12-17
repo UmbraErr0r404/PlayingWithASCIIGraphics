@@ -19,7 +19,7 @@ private:
 	int y;
 	int height;
 	int width;
-	std::deque<std::deque<ColoredCharacter>> frame;
+	std::deque<std::deque<ColoredCharacter> > frame;
 	std::string name;
 
 	/**
