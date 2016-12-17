@@ -17,8 +17,8 @@ class Frame{
 private:
 	int x;
 	int y;
-	int height;
-	int width;
+	unsigned int height;
+	unsigned int width;
 	std::deque<std::deque<ColoredCharacter> > frame;
 	std::string name;
 
