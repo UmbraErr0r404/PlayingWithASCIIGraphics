@@ -79,27 +79,27 @@ public:
 	/**
 	 * Gets this frame's name and returns it.
 	 */
-	std::string getName();
+	std::string getName() const;
 
 	/**
 	 * Gets this frame's X print location and returns it.
 	 */
-	int getX();
+	int getX() const;
 
 	/**
 	 * Gets this frame's Y print location and returns it.
 	 */
-	int getY();
+	int getY() const;
 
 	/**
 	 * Gets this frame's height and returns it.
 	 */
-	int getHeight();
+	int getHeight() const;
 
 	/**
 	 * Gets this frame's width and returns it.
 	 */
-	int getWidth();
+	int getWidth() const;
 
 	/**
 	 * Places the ColoredCharacters from the given frame onto
