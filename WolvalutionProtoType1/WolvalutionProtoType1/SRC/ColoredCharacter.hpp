@@ -27,7 +27,7 @@ public:
 	 * Creates a default ColoredCharacter with a given charcter, and  default colors;
 	 * @param ch A char that will be set to the default colors
 	 */
-	ColoredCharacter(char ch);
+	explicit ColoredCharacter(char ch);
 
 	/**
 	 * Creates a default ColoredCharacter with a given charcter, and colors;
