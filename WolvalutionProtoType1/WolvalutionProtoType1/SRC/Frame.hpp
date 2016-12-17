@@ -55,12 +55,6 @@ public:
 	Frame(std::string Iname, int Ix, int Iy, Map AMap); 
 
 	/**
-	 * Copy construtor
-	 * @param Iframe The frame being copied.
-	 */
-	Frame(const Frame &Iframe);
-
-	/**
 	 * Turns the frame that called this function into a copy of the called file.
 	 * @param Ix The x postion where the frames thinks it will be printed.
 	 * @param Iy The y postion where the frames thinks it will be printed.
