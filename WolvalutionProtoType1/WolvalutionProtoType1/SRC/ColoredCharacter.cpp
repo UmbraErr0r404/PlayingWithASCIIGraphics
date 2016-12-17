@@ -18,21 +18,21 @@ ColoredCharacter::ColoredCharacter(color inputbg, color inputfg, char ch){
 	fg = inputfg;
 }
 
-bool ColoredCharacter::operator==(ColoredCharacter CCcompare){
-	if ((bg == CCcompare.getBG()) && (fg == CCcompare.getFG()) && (c = CCcompare.getChar()))
+bool ColoredCharacter::operator==(const ColoredCharacter& CCcompare) const{
+	if ((bg == CCcompare.getBG()) && (fg == CCcompare.getFG()) && (c == CCcompare.getChar()))
 		return true;
 	else
 		return false;
 }
 
-char ColoredCharacter::getChar(){
+char ColoredCharacter::getChar() const{
 	return c;
 }
 
-color ColoredCharacter::getBG(){
+color ColoredCharacter::getBG() const{
 	return bg;
 }
 
-color ColoredCharacter::getFG(){
+color ColoredCharacter::getFG() const{
 	return fg;
 }
