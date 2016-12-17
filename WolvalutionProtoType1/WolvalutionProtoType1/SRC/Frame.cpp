@@ -51,18 +51,6 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
 		}
 };
 
-Frame::Frame(const Frame &Iframe){
-	x = Iframe.x;
-	y = Iframe.y;
-	height = Iframe.height;
-	width = Iframe.width;
-	ResizeFrame(width, height);
-
-	for (int i = 0; i < width; i++)
-		for (int k = 0; k < height; k++)
-			frame[i][k] = Iframe.frame[i][k];
-}
-
 void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string newFrameName){
 	std::ifstream myfile;
 	myfile.open(fileName);
@@ -114,23 +102,23 @@ std::deque<ColoredCharacter>& Frame::operator[](const int index){
 	return frame[index];
 }
 
-std::string Frame::getName(){
+std::string Frame::getName() const{
 	return name;
 }
 
-int Frame::getX(){
+int Frame::getX() const{
 	return x;
 }
 
-int Frame::getY(){
+int Frame::getY() const{
 	return y;
 }
 
-int Frame::getHeight(){
+int Frame::getHeight() const{
 	return height;
 }
 
-int Frame::getWidth(){
+int Frame::getWidth() const{
 	return width;
 }
 
