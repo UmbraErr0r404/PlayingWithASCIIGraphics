@@ -7,6 +7,21 @@
  * printing informastion for a coloredable termail.
  */
 
+/*
+ * File local TODO list
+ * ====================
+ *
+ *  * move PlaceExampleMap to data file (or remove function)
+ *
+ *  * consolidate similar functions by separating out data
+ *    1. YouDied
+ *    2. YouWin
+ *    3. PlaceWhoAreYou
+ *    4. PlaceWindowMoonArt
+ *    5. PlaceWindowSceneArt
+ *    6. PlaceLogo
+ */
+
 #ifndef __FRAME_H_INCLUDED__   
 #define __FRAME_H_INCLUDED__  
 #include "Map.hpp"
@@ -15,8 +30,8 @@
 
 class Frame{
 private:
-	int x;
-	int y;
+	unsigned int x;
+	unsigned int y;
 	unsigned int height;
 	unsigned int width;
 	std::deque<std::deque<ColoredCharacter> > frame;
