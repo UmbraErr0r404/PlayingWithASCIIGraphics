@@ -41,21 +41,21 @@ public:
 	 * Overloads the == operator for ColoredCharcter
 	 * @param CCcompare The ColorCharacter being compared too.
 	 */
-	bool operator== (const ColoredCharacter& CCcompare);
+	bool operator== (const ColoredCharacter& CCcompare) const;
 
 	/**
 	 * Gets the character for this ColoredCharacter.
 	 */
-	char getChar();
+	char getChar() const;
 
 	/**
 	 * Gets the background color for this ColoredCharacter.
 	 */
-	color getBG();
+	color getBG() const;
 
 	/**
 	 * Gets the foreground color for this ColoredCharacter.
 	 */
-	color getFG();
+	color getFG() const;
 };
 #endif 
