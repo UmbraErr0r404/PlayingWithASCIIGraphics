@@ -7,11 +7,11 @@ MapSquare::MapSquare(){
 	myDescription = "A small grassy area.";
 }
 
-MapSquare::MapSquare(Scenario aEvent, ColoredCharacter c, bool canWalk, std::string myDif){
+MapSquare::MapSquare(Scenario aEvent, ColoredCharacter c, bool canWalk, std::string myDis){
 	walkable = canWalk;
 	tile = c;
 	myScenario = aEvent;
-	myDescription = myDif;
+	myDescription = myDis;
 }
 
 bool MapSquare::isWalkable() const{
