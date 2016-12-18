@@ -169,6 +169,8 @@ int main(int argc, char * argv[]){
 				Console.PrintMap(3, 4, IAmMap);
 			}
 			if (key == 'i' || key == 'I'){
+				//TODO: I presume the next line is correct but typed badly.
+				//      Correct it either way.
 				Console.PrintFrame(Inventory.getX(), Inventory.getY(), Inventory);bool MenuOpen = true;
 				MenuOpen = true;
 				while (MenuOpen){
@@ -217,6 +219,7 @@ int main(int argc, char * argv[]){
 		Console.txtCC(IAmMap.getPlayerMapSquare().getScenario().getMyDescription(), ColorCode(Black, Purple));
 
 		OptionMenu = true;
+		//TODO: OptionListB is just an int%4
 		bool OptionListB[4]{ true, false, false, false };
 		Option OptionListO[4]{ IAmMap.getPlayerMapSquare().getScenario().getMyOption1(),
 				IAmMap.getPlayerMapSquare().getScenario().getMyOption2(),
@@ -288,6 +291,8 @@ int main(int argc, char * argv[]){
 					loseGame = true;
 			}
 
+		//TODO: If this || holds true all of the time, should there only
+		//      exist 2 bools to hold the value, not 3?
 		if(wonGame || loseGame)
 			PlayGame = false;     
 	}
@@ -299,7 +304,7 @@ int main(int argc, char * argv[]){
 	else
 		Console.PrintFrame(LossBase.getX(), LossBase.getY(), LossBase);
 
-	//Make a slection to playagain or quit
+	//TODO: Make a slection to playagain or quit
 
 	return 0; 
 }
