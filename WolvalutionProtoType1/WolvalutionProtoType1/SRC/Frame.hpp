@@ -20,6 +20,8 @@
  *    4. PlaceWindowMoonArt
  *    5. PlaceWindowSceneArt
  *    6. PlaceLogo
+ *
+ *  * Make ImportFrame into a constructor 
  */
 
 #ifndef __FRAME_H_INCLUDED__   
