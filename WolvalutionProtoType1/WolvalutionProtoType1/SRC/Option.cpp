@@ -16,18 +16,18 @@ Option::Option(int HC, int SC, std::string item, std::string def, bool selected)
 	isSeletced = selected;
 }
 
-int Option::getHealthChange(){
+int Option::getHealthChange() const{
 	return myHealthChange;
 }
 
-int Option::getStaminaChange(){
+int Option::getStaminaChange() const{
 	return myStaminaChange;
 }
 
-std::string Option::getMyItem(){
+std::string Option::getMyItem() const{
 	return myItem;
 }
 
-std::string Option::getMyText(){
+std::string Option::getMyText() const{
 	return myText;
 }
