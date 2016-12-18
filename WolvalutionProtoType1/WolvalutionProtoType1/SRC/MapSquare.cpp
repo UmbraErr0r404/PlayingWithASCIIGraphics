@@ -14,28 +14,28 @@ MapSquare::MapSquare(Scenario aEvent, ColoredCharacter c, bool canWalk, std::str
 	myDescription = myDif;
 }
 
-bool MapSquare::isWalkable(){
+bool MapSquare::isWalkable() const{
 	return walkable;
 }
 
-ColoredCharacter MapSquare::getChar(){
+ColoredCharacter MapSquare::getChar() const{
 	return myChar;
 }
 
-std::string MapSquare::getDescription(){
+std::string MapSquare::getDescription() const{
 	return myDescription;
 }
 
 
-Scenario MapSquare::getScenario(){
+Scenario MapSquare::getScenario() const{
 	return myScenario;
 }
 
-bool MapSquare::getScenarioActive(){
+bool MapSquare::getScenarioActive() const{
 	return myScenario.getIsActive();
 }
 
-ColoredCharacter MapSquare::getColoredCharacter(){
+ColoredCharacter MapSquare::getColoredCharacter() const{
 	return myChar.getChar();
 }
 
