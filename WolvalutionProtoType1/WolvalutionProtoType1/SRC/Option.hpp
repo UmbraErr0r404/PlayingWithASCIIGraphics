@@ -17,8 +17,8 @@ class Option{
 private:
 	int myHealthChange;
 	int myStaminaChange;
-	std::string myItem;
 	std::string myText;
+	std::string myItem;
 	bool isSeletced;
 
 public:
@@ -40,22 +40,22 @@ public:
 	/**
 	 * Returns the health change this option does.
 	 */
-	int getHealthChange();
+	int getHealthChange() const;
 
 	/**
 	 * Returns the stamina change this option does.
 	 */
-	int getStaminaChange();
+	int getStaminaChange() const;
 
 	/**
 	 * Returns the item the player gets from picking this option.
 	 */
-	std::string getMyItem();
+	std::string getMyItem() const;
 
 	/**
 	 * Return the text that tells the player what this option might do.
 	 */
-	std::string getMyText();
+	std::string getMyText() const;
 };
 
 #endif 
