@@ -56,7 +56,7 @@ public:
 	/**
 	 * Returns postions in deque where the frame is, or -1 if not found.
 	 */
-	int SearchFrame(std::string searchName);
+	int SearchFrame(std::string searchName) const;
 
 	/**
 	 *
@@ -70,12 +70,12 @@ public:
 	 * returns the current map for this screen, for the purposes of this game,
 	 * each screen will only have one current map.
 	 */
-	Frame CurrentMap();
+	Frame CurrentMap() const;
 
 	/**
    * Returns the number of Frames in the PrintOrder
    */
-	int printOrderLength();
+	int printOrderLength() const;
       
 };
 #endif 

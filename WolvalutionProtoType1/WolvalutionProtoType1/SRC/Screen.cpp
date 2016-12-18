@@ -32,7 +32,7 @@ Frame Screen::PopFrameBack(){
 	return temp;
 }
 
-int Screen::SearchFrame(std::string searchName){
+int Screen::SearchFrame(std::string searchName) const{
 	for (int i = 0; i < PrintOrder.size(); i++)
 		if (PrintOrder[i].getName() == searchName)
 			return i;
@@ -54,7 +54,7 @@ void Screen::UpdateMap(int Ix, int Iy, Map aMap){
 	}
 }
 
-Frame Screen::CurrentMap(){
+Frame Screen::CurrentMap() const{
 	if (SearchFrame("CurrentScreenMap") == -1){
 		Frame Error("Error", 0, 0, 0, 0);
 		return Error;
@@ -64,6 +64,6 @@ Frame Screen::CurrentMap(){
 	}
 }
 
-int Screen::printOrderLength(){
+int Screen::printOrderLength() const{
 	return frameCount;
 }
