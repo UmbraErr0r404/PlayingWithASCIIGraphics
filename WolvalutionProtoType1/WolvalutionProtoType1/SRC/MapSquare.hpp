@@ -16,7 +16,7 @@ class MapSquare{
 private:
 	bool walkable;
 	Scenario myScenario;
-	ColoredCharacter myChar;
+	ColoredCharacter tile;
 	std::string myDescription;
 
 public:
