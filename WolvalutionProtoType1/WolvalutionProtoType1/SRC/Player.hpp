@@ -41,33 +41,33 @@ public:
 	/**
 	 * Returns the player's current health.
 	 */
-	int getHealth();
+	int getHealth() const;
 
 	/**
 	 * Returns the player's current stamina.
 	 */
-	int getStamina();
+	int getStamina() const;
 
 	/**
 	 * Returns the player's current x location.
 	 */
-	int getXLocation();
+	int getXLocation() const;
    
 	/**
 	 * Returns the player's current y location.
 	 */
-	int getYLocation();
+	int getYLocation() const;
 
 	/**
 	 * Returns the player's name.
 	 */
-	std::string getName();
+	std::string getName() const;
 
 	/**
 	 * Searchs the player's inventory for a spefic item then returns index if found
 	 * else will give -1 if not found.
 	 */
-	int searchItems(std::string item);
+	int searchItems(std::string item) const;
 
 	/**
 	 * Adds an item to the player's inventory.
@@ -99,9 +99,9 @@ public:
    */
 	void movePlayerWest();
 
-	int getMAXHEALTH();
+	int getMAXHEALTH() const;
 
-	int getMAXSTAMINA();
+	int getMAXSTAMINA() const;
 
 };
 

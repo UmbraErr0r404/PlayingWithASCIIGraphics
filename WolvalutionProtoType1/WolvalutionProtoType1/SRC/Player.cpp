@@ -16,33 +16,31 @@ void Player::modifyStamina(int num){
 	myStamina = myStamina + num;
 }
 
-int Player::getHealth(){
+int Player::getHealth() const{
 	return myHealth;
 }
 
-int Player::getStamina(){
+int Player::getStamina() const{
 	return myStamina;
 }
 
-int Player::getXLocation(){
+int Player::getXLocation() const{
 	return myXLocation;
 }
 
-int Player::getYLocation(){
+int Player::getYLocation() const{
 	return myYLocation;
 }
 
-std::string Player::getName(){
+std::string Player::getName() const{
 	return myName;
 }
 
-int Player::searchItems(std::string item){
-	for (int i = 0; i < inventory.size(); i++){
+int Player::searchItems(std::string item) const{
+	for (unsigned int i = 0; i < inventory.size(); i++)
 		if (inventory[i] == item)
 			return i;
-		else
-			return -1;
-	}
+		return -1;
 }
 
 void Player::givePlayerItem(std::string item){
@@ -71,11 +69,11 @@ void Player::movePlayerWest(){
 	myXLocation = myXLocation - 1;
 }
 
-int Player::getMAXHEALTH(){
+int Player::getMAXHEALTH() const{
 	return MAX_HEALTH;
 }
 
-int Player::getMAXSTAMINA(){
+int Player::getMAXSTAMINA() const{
 	return MAX_STAMINA;
 }
 
