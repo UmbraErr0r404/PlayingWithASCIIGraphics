@@ -18,6 +18,7 @@ ColoredCharacter::ColoredCharacter(color inputbg, color inputfg, char ch){
 	fg = inputfg;
 }
 
+//TODO: simplify code paths
 bool ColoredCharacter::operator==(const ColoredCharacter& CCcompare) const{
 	if ((bg == CCcompare.getBG()) && (fg == CCcompare.getFG()) && (c == CCcompare.getChar()))
 		return true;

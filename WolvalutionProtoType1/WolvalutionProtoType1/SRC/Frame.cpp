@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 
+//TODO: order this file in the same order as the hpp
+
 void Frame::ResizeFrame(int Iwidth, int Iheight){ 
 	frame.clear();
 	for (int tx = 0; tx < Iwidth; tx++){

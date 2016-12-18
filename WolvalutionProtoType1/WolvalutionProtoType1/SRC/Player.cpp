@@ -76,5 +76,3 @@ int Player::getMAXHEALTH() const{
 int Player::getMAXSTAMINA() const{
 	return MAX_STAMINA;
 }
-
-

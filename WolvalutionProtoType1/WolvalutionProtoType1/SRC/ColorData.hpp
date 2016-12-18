@@ -12,6 +12,8 @@
 /*
  * Calculates the number needed for correct color in txtCC and CCC
  */
+//TODO: this describes how colors are used in escape codes and so
+//      should be in ColoredCharacter.cpp
 #define ColorCode(bg, fg) ((int(bg) * 0x10) + int(fg)) 
 
 enum color{

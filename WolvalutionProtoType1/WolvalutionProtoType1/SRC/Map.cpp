@@ -39,6 +39,7 @@ unsigned int Map::getMyPlayerYLocation() const{
 	return myPlayer.getYLocation();
 }
 
+//TODO: player location returns an uint, it mus be >0
 void Map::MovePlayerNorth(){
 	if (getMyPlayerYLocation() <= 0)
 		; //do nothing

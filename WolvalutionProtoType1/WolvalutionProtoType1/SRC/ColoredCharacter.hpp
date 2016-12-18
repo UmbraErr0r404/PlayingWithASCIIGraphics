@@ -12,6 +12,8 @@
 
 #include "ColorData.hpp"
 
+//TODO: move operators to be defined at end of class
+
 class ColoredCharacter{
 private:
 	char c;
