@@ -6,6 +6,7 @@
 WindowsConsole::WindowsConsole(){
 	CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
 	AllocConsole();
+	//TODO: what's that L doing there?
 	std::wstring strW = L"Wolvalution";
 	SetConsoleTitle(strW.c_str());
 	DrawMenuBar(GetConsoleWindow());
