@@ -12,63 +12,62 @@
 #include "ColoredCharacter.hpp"
 #include "Scenario.hpp"
 
-class MapSquare
-{
+class MapSquare{
 private:
-   bool walkable;
-   Scenario myScenario;
-   ColoredCharacter myChar;
-   std::string myDescription;
+	bool walkable;
+	Scenario myScenario;
+	ColoredCharacter tile;
+	std::string myDescription;
 
 public:
-   /**
-    * Default construtor
-    */
-   MapSquare();
+	/**
+	 * Default construtor
+	 */
+	MapSquare();
 
-   /**
-    * A constructor for fully setting up a MapSqaure.
-    * @param aEvent is the scenario assigned to the MapSquare.
+	/**
+	 * A constructor for fully setting up a MapSqaure.
+	 * @param aEvent is the scenario assigned to the MapSquare.
 	 * @param c is the printable character assigned to the MapSquare.
-    * @param canWalk For checking if the player can be at this location.
-    * @param mfDif The description of this MapSquares scene.
-    */
-   MapSquare(Scenario aEvent, ColoredCharacter c, bool canWalk, std::string myDif);
+	 * @param canWalk For checking if the player can be at this location.
+	 * @param mfDif The description of this MapSquares scene.
+	 */
+	MapSquare(Scenario aEvent, ColoredCharacter c, bool canWalk, std::string myDif);
 
-   /**
-    * Returns true if Player can occupy the MapSquare.
-    */
-   bool isWalkable();
+	/**
+	 * Returns true if Player can occupy the MapSquare.
+	 */
+	bool isWalkable() const;
 
-   /**
-    * Returns the printable character.
-    */
-   ColoredCharacter getChar();
+	/**
+	 * Returns the printable character.
+	 */
+	ColoredCharacter getChar() const;
 
-   /**
-    *
-    */
-   std::string getDescription();
+	/**
+	 *
+	 */
+	std::string getDescription() const;
 
-   /**
-    * Returns the scenario at the MapSquare.
-    */
-   Scenario getScenario();
+	/**
+	 * Returns the scenario at the MapSquare.
+	 */
+	Scenario getScenario() const;
 
-   /**
+	/**
    *
    */
-   bool getScenarioActive();
+	bool getScenarioActive() const;
 
-   /**
+	/**
    *
    */
-   ColoredCharacter getColoredCharacter();
+	ColoredCharacter getColoredCharacter() const;
 
-   /**
+	/**
    *
    */
-   void DeActiveScenario();
+	void DeActiveScenario();
 };
 
 #endif 

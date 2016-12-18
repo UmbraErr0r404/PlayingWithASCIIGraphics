@@ -3,129 +3,99 @@
 #include "ColoredCharacter.hpp" //for input and export map
 #include "Option.hpp"           //for input and export map
 
-Map::Map()
-{
-   for (int lcv = 0; lcv < WIDTH; lcv++)
-   {
-      myMapSquares.push_back(std::deque<MapSquare>());
-      for (int lcv2 = 0; lcv2 < HEIGHT; lcv2++)
-         myMapSquares.back().push_back(MapSquare());
-   }
+Map::Map(){
+	for (int lcv = 0; lcv < WIDTH; lcv++){
+		myMapSquares.push_back(std::deque<MapSquare>());
+		for (int lcv2 = 0; lcv2 < HEIGHT; lcv2++)
+			myMapSquares.back().push_back(MapSquare());
+	}
 }
 
-void Map::PlaceMapSquare(const int x, const int y, MapSquare aMapSquare)
-{
-   myMapSquares[x][y] = aMapSquare;
+void Map::PlaceMapSquare(const int x, const int y, MapSquare aMapSquare){
+	myMapSquares[x][y] = aMapSquare;
 }
 
-std::deque<MapSquare>& Map::operator[] (const int index)
-{
-   return myMapSquares[index];
+std::deque<MapSquare>& Map::operator[] (const int index){
+	return myMapSquares[index];
 }
 
-MapSquare Map::getPlayerMapSquare()
-{
-   return myMapSquares[myPlayer.getXLocation()][myPlayer.getYLocation()];
+MapSquare Map::getPlayerMapSquare() const{
+	return myMapSquares[myPlayer.getXLocation()][myPlayer.getYLocation()];
 }
 
-int Map::getHeight()
-{
-   return HEIGHT;
+int Map::getHeight() const{
+	return HEIGHT;
 }
 
-int Map::getWidth()
-{
-   return WIDTH;
+int Map::getWidth() const{
+	return WIDTH;
 }
 
-int Map::getMyPlayerXLocation()
-{
-   return myPlayer.getXLocation();
+unsigned int Map::getMyPlayerXLocation() const{
+	return myPlayer.getXLocation();
 }
 
-int Map::getMyPlayerYLocation()
-{
-   return myPlayer.getYLocation();
+unsigned int Map::getMyPlayerYLocation() const{
+	return myPlayer.getYLocation();
 }
 
-void Map::MovePlayerNorth()
-{
-   if (getMyPlayerYLocation() <= 0)
-      ; //do nothing
-   else
-   {
-      if (myMapSquares[getMyPlayerXLocation()][getMyPlayerYLocation() - 1].isWalkable())
-         myPlayer.movePlayerNorth();
-      else
-         ;//do nothing
-   }
+//TODO: player location returns an uint, it mus be >0
+void Map::MovePlayerNorth(){
+	if (getMyPlayerYLocation() <= 0)
+		; //do nothing
+	else if (myMapSquares[getMyPlayerXLocation()][getMyPlayerYLocation() - 1].isWalkable())
+		myPlayer.movePlayerNorth();
+	else
+		;//do nothing
 }
 
-void Map::MovePlayerSouth()
-{
-   if (getMyPlayerYLocation() >= HEIGHT -1)
-      ; //do nothing
-   else
-   {
-      if (myMapSquares[getMyPlayerXLocation()][getMyPlayerYLocation() + 1].isWalkable())
-         myPlayer.movePlayerSouth();
-      else
-         ;//do nothing
-   }
+void Map::MovePlayerSouth(){
+	if (getMyPlayerYLocation() >= HEIGHT -1)
+		; //do nothing
+	else if (myMapSquares[getMyPlayerXLocation()][getMyPlayerYLocation() + 1].isWalkable())
+		myPlayer.movePlayerSouth();
+	else
+		;//do nothing
 }
 
-void Map::MovePlayerWest()
-{
-   if (getMyPlayerXLocation() <= 0)
-      ; //do nothing
-   else
-   {
-      if (myMapSquares[getMyPlayerXLocation() - 1][getMyPlayerYLocation()].isWalkable())
-         myPlayer.movePlayerWest();
-      else
-         ;//do nothing
-   }
+void Map::MovePlayerWest(){
+	if (getMyPlayerXLocation() <= 0)
+		; //do nothing
+	else if (myMapSquares[getMyPlayerXLocation() - 1][getMyPlayerYLocation()].isWalkable())
+		myPlayer.movePlayerWest();
+	else
+		;//do nothing
 }
 
-void Map::MovePlayerEast()
-{
-   if (getMyPlayerXLocation() >= WIDTH - 1)
-      ; //do nothing
-   else
-   {
-      if (myMapSquares[getMyPlayerXLocation() + 1][getMyPlayerYLocation()].isWalkable())
-         myPlayer.movePlayerEast();
-      else
-         ;//do nothing
-   }
+void Map::MovePlayerEast(){
+	if (getMyPlayerXLocation() >= WIDTH - 1)
+		; //do nothing
+	else if (myMapSquares[getMyPlayerXLocation() + 1][getMyPlayerYLocation()].isWalkable())
+		myPlayer.movePlayerEast();
+	else
+		;//do nothing
 }
 
-int Map::getPlayerMAXHEALTH()
-{
-   return myPlayer.getMAXHEALTH();
+int Map::getPlayerMAXHEALTH() const{
+	return myPlayer.getMAXHEALTH();
 }
 
-int Map::getPlayerCurrentHealth()
-{
-   return myPlayer.getHealth();
+int Map::getPlayerCurrentHealth() const{
+	return myPlayer.getHealth();
 }
 
-int Map::getPlayerCurrentStamina()
-{
-   return myPlayer.getStamina();
+int Map::getPlayerCurrentStamina() const{
+	return myPlayer.getStamina();
 }
 
-int Map::getPlayerMAXSTAMINA()
-{
-   return myPlayer.getMAXSTAMINA();
+int Map::getPlayerMAXSTAMINA() const{
+	return myPlayer.getMAXSTAMINA();
 }
 
-void Map::modifyPlayerHealth(int num)
-{
-   myPlayer.modifyHealth(num);
+void Map::modifyPlayerHealth(int num){
+	myPlayer.modifyHealth(num);
 }
 
-void Map::modifyPlayerStamina(int num)
-{
-   myPlayer.modifyStamina(num);
+void Map::modifyPlayerStamina(int num){
+	myPlayer.modifyStamina(num);
 }

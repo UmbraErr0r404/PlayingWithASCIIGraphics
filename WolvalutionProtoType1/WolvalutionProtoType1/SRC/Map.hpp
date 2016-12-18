@@ -11,114 +11,120 @@
 #include "MapSquare.hpp"
 #include "Player.hpp"
 
-class Map
-{
+/*
+ * File local TODO list
+ * ====================
+ *
+ * * move WIDTH and HEIGHT to wherever they should be. (Id est, not here.)
+ */
+
+class Map{
 private:
-   std::deque<std::deque<MapSquare>> myMapSquares;
-   const int WIDTH = 114; //constant map width
-   const int HEIGHT = 24; //constant map height
-   Player myPlayer = Player();
+	std::deque<std::deque<MapSquare> > myMapSquares;
+	const int WIDTH = 114; //constant map width
+	const int HEIGHT = 24; //constant map height
+	Player myPlayer;
 
 public:
-   /**
-    * Default construtor
-    */
-   Map();
+	/**
+	 * Default construtor
+	 */
+	Map();
 
-   /**
-    * Changes the MapSquare in the array at the specified x and y locations
-    */
-   void PlaceMapSquare(const int x, const int y, MapSquare aMapSquare);
+	/**
+	 * Changes the MapSquare in the array at the specified x and y locations
+	 */
+	void PlaceMapSquare(const int x, const int y, MapSquare aMapSquare);
 
-   /**
-    * overloads the [] operator for this class
-    */
-   std::deque<MapSquare>& operator[] (const int index);
+	/**
+	 * overloads the [] operator for this class
+	 */
+	std::deque<MapSquare>& operator[] (const int index);
 
-   /**
-    * returns the mapsqaure that corsponse to the players current potion on the map
-    */
-   MapSquare getPlayerMapSquare();
+	/**
+	 * returns the mapsqaure that corsponse to the players current potion on the map
+	 */
+	MapSquare getPlayerMapSquare() const;
 
-   /**
-    * returns the maps height
-    */
-   int getHeight();
+	/**
+	 * returns the maps height
+	 */
+	int getHeight() const;
 
-   /**
-    * returns the maps width
-    */
-   int getWidth();
+	/**
+	 * returns the maps width
+	 */
+	int getWidth() const;
 
-   /**
+	/**
    *
    */
-   int getMyPlayerXLocation();
+	unsigned int getMyPlayerXLocation() const;
 
-   /**
+	/**
    *
    */
-   int getMyPlayerYLocation();
+	unsigned int getMyPlayerYLocation() const;
 
-   /**
+	/**
    *
    */
-   void MovePlayerNorth();
+	void MovePlayerNorth();
 
-   /**
+	/**
    *
    */
-   void MovePlayerSouth();
+	void MovePlayerSouth();
 
-   /**
+	/**
    *
    */
-   void MovePlayerWest();
+	void MovePlayerWest();
 
-   /**
+	/**
    *
    */
-   void MovePlayerEast();
+	void MovePlayerEast();
 
-   /**
+	/**
    *
    */
-   int getPlayerMAXHEALTH();
+	int getPlayerMAXHEALTH() const;
 
-   /**
+	/**
    *
    */
-   int getPlayerCurrentHealth();
+	int getPlayerCurrentHealth() const;
 
-   /**
+	/**
    *
    */
-   int getPlayerCurrentStamina();
+	int getPlayerCurrentStamina() const;
 
-   /**
+	/**
    *
    */
-   int getPlayerMAXSTAMINA();
+	int getPlayerMAXSTAMINA() const;
 
-   /**
+	/**
    *
    */
-   void ImportMap(int Ix, int Iy, std::string fileName);
+	void ImportMap(int Ix, int Iy, std::string fileName);
 
-   /**
+	/**
    *
    */
-   void ExportMap(std::string fileName);
+	void ExportMap(std::string fileName);
 
-   /**
+	/**
    *
    */
-   void modifyPlayerHealth(int num);
+	void modifyPlayerHealth(int num);
 
-   /**
+	/**
    *
    */
-   void modifyPlayerStamina(int num);
+	void modifyPlayerStamina(int num);
 };
 
 #endif 
