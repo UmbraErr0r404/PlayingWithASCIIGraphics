@@ -75,19 +75,19 @@ void Map::MovePlayerEast(){
 		;//do nothing
 }
 
-int Map::getPlayerMAXHEALTH(){
+int Map::getPlayerMAXHEALTH() const{
 	return myPlayer.getMAXHEALTH();
 }
 
-int Map::getPlayerCurrentHealth(){
+int Map::getPlayerCurrentHealth() const{
 	return myPlayer.getHealth();
 }
 
-int Map::getPlayerCurrentStamina(){
+int Map::getPlayerCurrentStamina() const{
 	return myPlayer.getStamina();
 }
 
-int Map::getPlayerMAXSTAMINA(){
+int Map::getPlayerMAXSTAMINA() const{
 	return myPlayer.getMAXSTAMINA();
 }
 
