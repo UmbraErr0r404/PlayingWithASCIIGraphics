@@ -54,6 +54,7 @@ void Screen::UpdateMap(int Ix, int Iy, Map aMap){
 	}
 }
 
+//TODO: I'm sure you ever check if that happened on a higher level
 Frame Screen::CurrentMap() const{
 	if (SearchFrame("CurrentScreenMap") == -1){
 		Frame Error("Error", 0, 0, 0, 0);
