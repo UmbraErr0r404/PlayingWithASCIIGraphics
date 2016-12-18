@@ -56,6 +56,7 @@ int main(int argc, char * argv[]){
 	bool QuitSelect = false;
 	bool PlaySelect = true;
 
+	//TODO: use a switch statement
 	while (HomeSelecting){
 		key = getch();
 		if (key == 'w' || key == 'W'){
@@ -138,6 +139,7 @@ int main(int argc, char * argv[]){
 			Console.CCC(char(219), ColorCode(Black, Green));
 		}
 
+		//TODO: use a switch statement
 		while (walking){
 			key = getch();
 			if (key == 'w' || key == 'W'){ //w key to move north
@@ -222,6 +224,7 @@ int main(int argc, char * argv[]){
 				IAmMap.getPlayerMapSquare().getScenario().getMyOption4() };
 		int currentOption = 0;
 
+		//TODO: use a switch statement
 		while(OptionMenu){
 			for (int olist = 0; olist < 4; olist++){
 				Console.SetCursor(6, 41 + (2 * olist));
