@@ -79,7 +79,7 @@ int main(int argc, char * argv[]){
 				QuitSelect = true;
 				PlaySelect = false;
 			}
-		}else if (key == 32 || key == 13){ //space-bar or enter
+		}else if (key == ' ' || key == '\n' || key == '\r'){
 			if (QuitSelect)
 				return 0;
 			else if (PlaySelect)
@@ -97,7 +97,7 @@ int main(int argc, char * argv[]){
 	bool IntroWait = true;
 	while (IntroWait){
 		key = getch();
-		if (key == 32) //space-bar
+		if (key == ' ')
 			IntroWait = false;
 	}
 
@@ -142,50 +142,50 @@ int main(int argc, char * argv[]){
 		//TODO: use a switch statement
 		while (walking){
 			key = getch();
-			if (key == 'w' || key == 'W'){ //w key to move north
+			if (key == 'w' || key == 'W'){
 				IAmMap.MovePlayerNorth();
 				Console.PrintMap(3, 4, IAmMap);
 			}
-			if (key == 's' || key == 'S'){ //s key to move south
+			if (key == 's' || key == 'S'){
 				IAmMap.MovePlayerSouth();
 				Console.PrintMap(3, 4, IAmMap);
 			}
-			if (key == 'a' || key == 'A'){ //a key to move west
+			if (key == 'a' || key == 'A'){
 				IAmMap.MovePlayerWest();
 				Console.PrintMap(3, 4, IAmMap);
 			}
-			if (key == 'd' || key == 'D'){ //d key to move east
+			if (key == 'd' || key == 'D'){
 				IAmMap.MovePlayerEast();
 				Console.PrintMap(3, 4, IAmMap);
 			}
-			if (key == 'h' || key == 'H'){ //h key
+			if (key == 'h' || key == 'H'){
 				Console.PrintFrame(HelpMenu.getX(), HelpMenu.getY(), HelpMenu);
 				MenuOpen = true;
 				while (MenuOpen){
 					key = getch();
-					if (key == 'h' || key == 'H') //h key
+					if (key == 'h' || key == 'H')
 						MenuOpen = false;
 				}
 				Console.PrintMap(3, 4, IAmMap);
 			}
-			if (key == 'i' || key == 'I'){ //i key
+			if (key == 'i' || key == 'I'){
 				Console.PrintFrame(Inventory.getX(), Inventory.getY(), Inventory);bool MenuOpen = true;
 				MenuOpen = true;
 				while (MenuOpen){
 					key = getch();
-					if (key == 'i' || key == 'I') //h key
+					if (key == 'i' || key == 'I')
 						MenuOpen = false;
 				}
 				Console.PrintMap(3, 4, IAmMap);
 			}
-			if (key == 'q' || key == 'Q'){ //q key
+			if (key == 'q' || key == 'Q'){
 				Console.PrintFrame(QuitMenuYes.getX(), QuitMenuYes.getY(), QuitMenuYes);     
 				bool YesSelect = true;
 				bool NoSelect = false;
 				MenuOpen = true;
 				while (MenuOpen){
 					key = getch();
-					if (key == 'A' || key == 'a' || key == 'D' || key == 'd'){ //h key
+					if (key == 'A' || key == 'a' || key == 'D' || key == 'd'){
 						YesSelect = !YesSelect;
 						NoSelect = !NoSelect;
 						if(YesSelect)
@@ -193,7 +193,7 @@ int main(int argc, char * argv[]){
 						if (NoSelect)
 							Console.PrintFrame(QuitMenuNo.getX(), QuitMenuNo.getY(), QuitMenuNo);
 					}
-					if (key == 32 || key == 13)
+					if (key == ' ' || key == '\r' || key == '\n')
 						MenuOpen = false;                  
 				}
 				if (YesSelect)
@@ -208,7 +208,7 @@ int main(int argc, char * argv[]){
 
 			walking = !IAmMap.getPlayerMapSquare().getScenario().getIsActive();
 
-		} //walking loop end
+		}
 
 		Console.SetCursor(62, 1);
 		Console.txtCC("Scenario      ", ColorCode(Black, Purple));
@@ -234,7 +234,7 @@ int main(int argc, char * argv[]){
 					Console.txtCC(OptionListO[olist].getMyText(), ColorCode(Black, Purple));
 			}
 			key = getch();
-			if (key == 'W' || key == 'w'){ //Up
+			if (key == 'W' || key == 'w'){
 				OptionListB[currentOption] = false;
 				if (currentOption == 0){
 					currentOption = 3;
@@ -244,7 +244,7 @@ int main(int argc, char * argv[]){
 					OptionListB[currentOption] = true;
 				}
 			}
-			if (key == 'S' || key == 's'){ //Down
+			if (key == 'S' || key == 's'){
 				OptionListB[currentOption] = false;
 				if (currentOption == 3){
 					currentOption = 0;
@@ -254,9 +254,9 @@ int main(int argc, char * argv[]){
 					OptionListB[currentOption] = true;
 				}
 			}
-			if (key == 32 || key == 13)
+			if (key == ' ' || key == '\n' || key == '\r')
 				OptionMenu = false;
-		}//end of option menu
+		}
 		Console.SetCursor(18, 37);
 		Console.txtCC("                                                                                                   ", ColorCode(Black, Purple));
 		for (int olist = 0; olist < 4; olist++){
@@ -290,7 +290,7 @@ int main(int argc, char * argv[]){
 
 		if(wonGame || loseGame)
 			PlayGame = false;     
-	} //END OF PLAY GAME WHILE LOOP  
+	}
 
 	Console.ClearScreen();
 
