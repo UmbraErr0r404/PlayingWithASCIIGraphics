@@ -10,7 +10,7 @@ void Screen::ClearPrintOrder(){
 }
 
 void Screen::PushFrameFront(Frame q){
-	PrintOrder.push_front(q); //does not work for vectors, maybe use deque?
+	PrintOrder.push_front(q);
 	frameCount++;
 }
 void Screen::PushFrameBack(Frame q){
