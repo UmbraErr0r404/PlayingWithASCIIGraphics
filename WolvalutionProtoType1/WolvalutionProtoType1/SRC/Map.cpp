@@ -19,23 +19,23 @@ std::deque<MapSquare>& Map::operator[] (const int index){
 	return myMapSquares[index];
 }
 
-MapSquare Map::getPlayerMapSquare(){
+MapSquare Map::getPlayerMapSquare() const{
 	return myMapSquares[myPlayer.getXLocation()][myPlayer.getYLocation()];
 }
 
-int Map::getHeight(){
+int Map::getHeight() const{
 	return HEIGHT;
 }
 
-int Map::getWidth(){
+int Map::getWidth() const{
 	return WIDTH;
 }
 
-int Map::getMyPlayerXLocation(){
+unsigned int Map::getMyPlayerXLocation() const{
 	return myPlayer.getXLocation();
 }
 
-int Map::getMyPlayerYLocation(){
+unsigned int Map::getMyPlayerYLocation() const{
 	return myPlayer.getYLocation();
 }
 
