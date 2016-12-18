@@ -11,12 +11,19 @@
 #include "MapSquare.hpp"
 #include "Player.hpp"
 
+/*
+ * File local TODO list
+ * ====================
+ *
+ * * move WIDTH and HEIGHT to wherever they should be. (Id est, not here.)
+ */
+
 class Map{
 private:
-	std::deque<std::deque<MapSquare>> myMapSquares;
+	std::deque<std::deque<MapSquare> > myMapSquares;
 	const int WIDTH = 114; //constant map width
 	const int HEIGHT = 24; //constant map height
-	Player myPlayer = Player();
+	Player myPlayer;
 
 public:
 	/**
@@ -37,27 +44,27 @@ public:
 	/**
 	 * returns the mapsqaure that corsponse to the players current potion on the map
 	 */
-	MapSquare getPlayerMapSquare();
+	MapSquare getPlayerMapSquare() const;
 
 	/**
 	 * returns the maps height
 	 */
-	int getHeight();
+	int getHeight() const;
 
 	/**
 	 * returns the maps width
 	 */
-	int getWidth();
+	int getWidth() const;
 
 	/**
    *
    */
-	unsigned int getMyPlayerXLocation();
+	unsigned int getMyPlayerXLocation() const;
 
 	/**
    *
    */
-	unsigned int getMyPlayerYLocation();
+	unsigned int getMyPlayerYLocation() const;
 
 	/**
    *
@@ -82,22 +89,22 @@ public:
 	/**
    *
    */
-	int getPlayerMAXHEALTH();
+	int getPlayerMAXHEALTH() const;
 
 	/**
    *
    */
-	int getPlayerCurrentHealth();
+	int getPlayerCurrentHealth() const;
 
 	/**
    *
    */
-	int getPlayerCurrentStamina();
+	int getPlayerCurrentStamina() const;
 
 	/**
    *
    */
-	int getPlayerMAXSTAMINA();
+	int getPlayerMAXSTAMINA() const;
 
 	/**
    *
