@@ -17,8 +17,8 @@ class Option{
 private:
 	int myHealthChange;
 	int myStaminaChange;
-	std::string myItem;
 	std::string myText;
+	std::string myItem;
 	bool isSeletced;
 
 public:
