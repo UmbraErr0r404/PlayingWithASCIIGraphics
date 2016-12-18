@@ -9,11 +9,11 @@ void Screen::ClearPrintOrder(){
 	frameCount = 0;
 }
 
-void Screen::PushFrameFront(Frame const q){
+void Screen::PushFrameFront(Frame q){
 	PrintOrder.push_front(q); //does not work for vectors, maybe use deque?
 	frameCount++;
 }
-void Screen::PushFrameBack(Frame const q ){
+void Screen::PushFrameBack(Frame q){
 	PrintOrder.push_back(q);
 	frameCount++;
 }
@@ -33,7 +33,7 @@ Frame Screen::PopFrameBack(){
 }
 
 int Screen::SearchFrame(std::string searchName) const{
-	for (int i = 0; i < PrintOrder.size(); i++)
+	for (unsigned int i = 0; i < PrintOrder.size(); i++)
 		if (PrintOrder[i].getName() == searchName)
 			return i;
 	return -1;
