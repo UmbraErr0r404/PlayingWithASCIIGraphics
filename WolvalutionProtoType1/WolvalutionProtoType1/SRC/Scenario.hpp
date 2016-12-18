@@ -39,32 +39,32 @@ public:
 	/**
 	 * Returns the Description of this Scenario.
 	 */
-	std::string getMyDescription();
+	std::string getMyDescription() const;
 
 	/**
 	 * Returns option 1;
 	 */
-	Option getMyOption1();
+	Option getMyOption1() const;
 
 	/**
 	 * Returns option 2;
 	 */
-	Option getMyOption2();
+	Option getMyOption2() const;
 
 	/**
 	 * Returns option 3;
 	 */
-	Option getMyOption3();
+	Option getMyOption3() const;
 
 	/**
    * Returns option 4;
    */
-	Option getMyOption4();
+	Option getMyOption4() const;
 
 	/**
 	 * Returns if this Scenario is active or not.
 	 */
-	bool getIsActive();
+	bool getIsActive() const;
 
 	/**
    * Returns if this Scenario is active or not.
