@@ -15,6 +15,7 @@
  */
 #define _WIN32_WINNT 0x0500 
 
+//TODO: are all of these needed in the hpp?
 #include "ColorData.hpp"
 #include "Frame.hpp"
 #include "Screen.hpp"
@@ -29,6 +30,8 @@
 
 class WindowsConsole{
 private:
+	//TODO: These constants should be obtained from the console when
+	//      needed.
 	const static int HEIGHT = 50;
 	const static int WIDTH = 120;
 	bool CursorVisibility = true;
@@ -134,6 +137,7 @@ public:
 	 * @param Iy
 	 * @param Ic
 	 */
+	//TODO: make this function private
 	void PrintColoredCharacter(int Ix, int Iy, ColoredCharacter Ic);
 
 	/**
