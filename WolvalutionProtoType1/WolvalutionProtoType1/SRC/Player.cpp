@@ -37,12 +37,10 @@ std::string Player::getName() const{
 }
 
 int Player::searchItems(std::string item) const{
-	for (unsigned int i = 0; i < inventory.size(); i++){
+	for (unsigned int i = 0; i < inventory.size(); i++)
 		if (inventory[i] == item)
 			return i;
-		else
-			return -1;
-	}
+		return -1;
 }
 
 void Player::givePlayerItem(std::string item){
