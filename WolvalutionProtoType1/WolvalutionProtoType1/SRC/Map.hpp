@@ -118,7 +118,7 @@ public:
 
 	/**
    *
-x   */
+   */
 	void modifyPlayerHealth(int num);
 
 	/**
