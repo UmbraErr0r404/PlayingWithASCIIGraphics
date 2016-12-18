@@ -16,7 +16,7 @@ class MapSquare{
 private:
 	bool walkable;
 	Scenario myScenario;
-	ColoredCharacter myChar;
+	ColoredCharacter tile;
 	std::string myDescription;
 
 public:
@@ -37,32 +37,32 @@ public:
 	/**
 	 * Returns true if Player can occupy the MapSquare.
 	 */
-	bool isWalkable();
+	bool isWalkable() const;
 
 	/**
 	 * Returns the printable character.
 	 */
-	ColoredCharacter getChar();
+	ColoredCharacter getChar() const;
 
 	/**
 	 *
 	 */
-	std::string getDescription();
+	std::string getDescription() const;
 
 	/**
 	 * Returns the scenario at the MapSquare.
 	 */
-	Scenario getScenario();
+	Scenario getScenario() const;
 
 	/**
    *
    */
-	bool getScenarioActive();
+	bool getScenarioActive() const;
 
 	/**
    *
    */
-	ColoredCharacter getColoredCharacter();
+	ColoredCharacter getColoredCharacter() const;
 
 	/**
    *

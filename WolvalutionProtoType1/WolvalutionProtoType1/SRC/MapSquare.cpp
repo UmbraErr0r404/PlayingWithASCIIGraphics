@@ -3,40 +3,40 @@
 MapSquare::MapSquare(){
 	walkable = true;
 	myScenario = Scenario();
-	myChar = ColoredCharacter(Black, DarkGreen, char(177));
+	tile = ColoredCharacter(Black, DarkGreen, char(177));
 	myDescription = "A small grassy area.";
 }
 
-MapSquare::MapSquare(Scenario aEvent, ColoredCharacter c, bool canWalk, std::string myDif){
+MapSquare::MapSquare(Scenario aEvent, ColoredCharacter c, bool canWalk, std::string myDis){
 	walkable = canWalk;
-	myChar = c;
+	tile = c;
 	myScenario = aEvent;
-	myDescription = myDif;
+	myDescription = myDis;
 }
 
-bool MapSquare::isWalkable(){
+bool MapSquare::isWalkable() const{
 	return walkable;
 }
 
-ColoredCharacter MapSquare::getChar(){
-	return myChar;
+ColoredCharacter MapSquare::getChar() const{
+	return tile;
 }
 
-std::string MapSquare::getDescription(){
+std::string MapSquare::getDescription() const{
 	return myDescription;
 }
 
 
-Scenario MapSquare::getScenario(){
+Scenario MapSquare::getScenario() const{
 	return myScenario;
 }
 
-bool MapSquare::getScenarioActive(){
+bool MapSquare::getScenarioActive() const{
 	return myScenario.getIsActive();
 }
 
-ColoredCharacter MapSquare::getColoredCharacter(){
-	return myChar.getChar();
+ColoredCharacter MapSquare::getColoredCharacter() const{
+	return tile.getChar();
 }
 
 void MapSquare::DeActiveScenario(){
