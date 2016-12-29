@@ -7,8 +7,8 @@
  * for colored capaible termails
  */
 
-#ifndef __COLOREDCHARACTER_H_INCLUDED__ 
-#define __COLOREDCHARACTER_H_INCLUDED__ 
+#ifndef __COLOREDCHARACTER_HPP_INCLUDED__ 
+#define __COLOREDCHARACTER_HPP_INCLUDED__ 
 
 #include "ColorData.hpp"
 

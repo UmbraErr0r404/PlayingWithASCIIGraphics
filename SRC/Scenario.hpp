@@ -8,8 +8,8 @@
  * as a description on how this event has affected the evoirment around it.
  */
 
-#ifndef __SCENARIO_H_INCLUDED__   
-#define __SCENARIO_H_INCLUDED__  
+#ifndef __SCENARIO_HPP_INCLUDED__   
+#define __SCENARIO_HPP_INCLUDED__  
 #include <string>
 #include "Option.hpp"
 

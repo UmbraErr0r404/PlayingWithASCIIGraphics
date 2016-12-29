@@ -6,8 +6,8 @@
  * This Class represents a Player and all data related to the Player, as they play the game.
  */
 
-#ifndef __PLAYER_H_INCLUDED__   
-#define __PLAYER_H_INCLUDED__ 
+#ifndef __PLAYER_HPP_INCLUDED__   
+#define __PLAYER_HPP_INCLUDED__ 
 #include <deque>
 #include <string>
 

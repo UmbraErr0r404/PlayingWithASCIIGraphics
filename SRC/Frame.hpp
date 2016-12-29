@@ -24,8 +24,8 @@
  *  * Make ImportFrame into a constructor 
  */
 
-#ifndef __FRAME_H_INCLUDED__   
-#define __FRAME_H_INCLUDED__  
+#ifndef __FRAME_HPP_INCLUDED__   
+#define __FRAME_HPP_INCLUDED__  
 #include "Map.hpp"
 #include <string>
 #include <deque>
