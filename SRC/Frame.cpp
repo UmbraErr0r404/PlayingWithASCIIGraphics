@@ -6,8 +6,10 @@
 #include <fstream>
 
 //TODO: order this file in the same order as the hpp
-
-void Frame::ResizeFrame(int Iwidth, int Iheight){
+//TODO: Dose that need to take parameters?
+//      I think this funciton should be private and just use the local
+//      width and height variables.
+void Frame::ResizeFrame(int Iwidth, int Iheight){ 
 	frame.clear();
 	for (int tx = 0; tx < Iwidth; tx++){
 		frame.push_back(std::deque<ColoredCharacter>());
@@ -17,28 +19,20 @@ void Frame::ResizeFrame(int Iwidth, int Iheight){
 	}
 }
 
-Frame::Frame(){
-	name = "DefaultFrame";  x = 0; y = 0; height = 0; width = 0;
-	ResizeFrame(0, 0);
+Frame::Frame():
+	name("DefaultFrame"), x(0), y(0), height(0), width(0){
+	ResizeFrame(width, height);
 };
 
-Frame::Frame(std::string Iname, int Ix, int Iy, int const Iheight, int const Iwidth){
-	name = Iname;
-	x = Ix;
-	y = Iy;
-	height = Iheight;
-	width = Iwidth;
-	ResizeFrame(Iwidth, Iheight);
+Frame::Frame(std::string name, int x, int y, int const height, int const width):
+	name(name), x(x), y(y), height(height), width(width){
+	ResizeFrame(width, height);
 }
 
-Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
-	x = Ix;
-	y = Iy;
-	name = Iname;
-	height = AMap.getHeight();
-	width = AMap.getWidth();
-	ResizeFrame(width, height);
+Frame::Frame(std::string name, int x, int y, Map AMap):
+   name(name), x(x), y(y), height(AMap.getHeight()), width(AMap.getWidth()){
 
+	ResizeFrame(width, height);
 	ColoredCharacter MSPlayer(Black, Yellow, '@');
 	ColoredCharacter MUnknown(Black, Red, '?');
 

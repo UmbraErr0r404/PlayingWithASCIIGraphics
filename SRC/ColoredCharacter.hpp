@@ -29,7 +29,7 @@ public:
 	 * Creates a default ColoredCharacter with a given charcter, and  default colors;
 	 * @param ch A char that will be set to the default colors
 	 */
-	explicit ColoredCharacter(char ch);
+	explicit ColoredCharacter(char c);
 
 	/**
 	 * Creates a default ColoredCharacter with a given charcter, and colors;
@@ -37,7 +37,7 @@ public:
 	 * @param inputfg Color the foreground will be set to.
 	 * @param ch A char that will be set to the given colors
 	 */
-	ColoredCharacter(color inputbg, color inputfg, char ch);
+	ColoredCharacter(color bg, color fg, char c);
 
 	/**
 	 * Overloads the == operator for ColoredCharcter
