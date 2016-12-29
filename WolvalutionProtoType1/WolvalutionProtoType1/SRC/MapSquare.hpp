@@ -55,18 +55,18 @@ public:
 	Scenario getScenario() const;
 
 	/**
-   *
-   */
+	 *
+	 */
 	bool getScenarioActive() const;
 
 	/**
-   *
-   */
+	 *
+	 */
 	ColoredCharacter getColoredCharacter() const;
 
 	/**
-   *
-   */
+	 *
+	 */
 	void DeActiveScenario();
 };
 
