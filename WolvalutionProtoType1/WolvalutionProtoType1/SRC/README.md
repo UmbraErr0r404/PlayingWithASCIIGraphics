@@ -6,6 +6,7 @@ Easy
 * review documentation
 * use initialize lists when possible
 * finish creating doxygen comments
+* removed Visual Studio's files from repo
 
 Medium
 ------
