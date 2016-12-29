@@ -18,8 +18,8 @@ bool MapSquare::isWalkable() const{
 	return walkable;
 }
 
-ColoredCharacter MapSquare::getChar() const{
-	return tile;
+char MapSquare::getChar() const{
+	return tile.getChar();
 }
 
 std::string MapSquare::getDescription() const{
@@ -36,7 +36,7 @@ bool MapSquare::getScenarioActive() const{
 }
 
 ColoredCharacter MapSquare::getColoredCharacter() const{
-	return tile.getChar();
+   return tile;
 }
 
 void MapSquare::DeActiveScenario(){

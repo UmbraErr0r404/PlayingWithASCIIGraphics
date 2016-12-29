@@ -4,13 +4,12 @@ TODO
 Easy
 ----
 * review documentation
-* typedef uint
 * use initialize lists when possible
 * finish creating doxygen comments
-* remove per-file authors
 
 Medium
 ------
+* typedef uint
 * move data files to there own folder and write the code so VS can still find them
 * make per object tests
 * remove all calls to another object's members

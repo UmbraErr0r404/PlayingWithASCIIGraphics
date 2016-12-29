@@ -1,6 +1,6 @@
 /**
  * @file
- * @author Savannah Evans <evanssav@uwplatt.edu>
+ * @author Elizabeth Harasymiw <Elizabeth.Harasymiw@gmail.com>
  *
  * @section DESCRIPTION
  * This class reprepresents a MapSqaure and all data about that location.
@@ -42,7 +42,7 @@ public:
 	/**
 	 * Returns the printable character.
 	 */
-	ColoredCharacter getChar() const;
+	char getChar() const;
 
 	/**
 	 *

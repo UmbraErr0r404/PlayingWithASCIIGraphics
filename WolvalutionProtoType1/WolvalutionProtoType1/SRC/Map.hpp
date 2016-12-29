@@ -1,6 +1,6 @@
 /**
  * @file
- * @author Savannah Evans <evanssav@uwplatt.edu>
+ * @author Elizabeth Harasymiw <Elizabeth.Harasymiw@gmail.com>
  *
  * @section DESCRIPTION
  * This class represents a map object which has an array of MapSquares
