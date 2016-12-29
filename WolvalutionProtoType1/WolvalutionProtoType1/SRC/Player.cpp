@@ -1,10 +1,9 @@
 #include "Player.hpp"
 
-Player::Player(){
-	myHealth = MAX_HEALTH;
-	myStamina = MAX_STAMINA;
-	myXLocation = 4;
-	myYLocation = 4;
+Player::Player():
+	myHealth(MAX_HEALTH), myStamina(MAX_STAMINA),
+	myXLocation(4), myYLocation(4){
+
 	std::string myName = "Joe";
 }
 
