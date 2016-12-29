@@ -21,3 +21,4 @@ Hard
 * remove all referenced to getch() from all files except WindowsConsole.cpp
 * make PlayGame into a class for managing the menus
 * separate the physic engine out of PlayGame and Map
+* migrate to cmake or some other management system
