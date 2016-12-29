@@ -57,8 +57,8 @@ public:
 	Option getMyOption3() const;
 
 	/**
-   * Returns option 4;
-   */
+	 * Returns option 4;
+	 */
 	Option getMyOption4() const;
 
 	/**
@@ -67,8 +67,8 @@ public:
 	bool getIsActive() const;
 
 	/**
-   * Returns if this Scenario is active or not.
-   */
+	 * Returns if this Scenario is active or not.
+	 */
 	void DeActiveScenario();
 };
 
