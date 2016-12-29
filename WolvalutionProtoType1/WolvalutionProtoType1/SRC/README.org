@@ -11,3 +11,4 @@ TODO
 * finish creating doxygen comments
 * remove per-file authors
 * make per object tests
+* move data files to there own folder and write the code so VS can still find them
