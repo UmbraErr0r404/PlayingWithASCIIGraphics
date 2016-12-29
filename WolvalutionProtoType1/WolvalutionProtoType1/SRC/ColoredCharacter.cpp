@@ -8,7 +8,7 @@ ColoredCharacter::ColoredCharacter(char c):
 	bg(Black),fg(White),c(c){
 }
 
-ColoredCharacter::ColoredCharacter(color bg, color fg, char c) :
+ColoredCharacter::ColoredCharacter(color bg, color fg, char c):
    bg(bg),fg(fg), c(c){
 }
 
