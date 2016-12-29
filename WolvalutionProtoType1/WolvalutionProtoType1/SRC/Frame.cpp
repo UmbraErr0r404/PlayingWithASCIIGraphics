@@ -49,7 +49,7 @@ Frame::Frame(std::string Iname, int Ix, int Iy, Map AMap){
 			else if (AMap[bx][by].getScenarioActive())
 				frame[bx][by] = MUnknown;
 			else
-				frame[bx][by] = AMap[bx][by].getChar();
+				frame[bx][by] = AMap[bx][by].getColoredCharacter();
 		}
 };
 
