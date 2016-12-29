@@ -42,7 +42,7 @@ public:
 	/**
 	 * Returns the printable character.
 	 */
-	ColoredCharacter getChar() const;
+	char getChar() const;
 
 	/**
 	 *
