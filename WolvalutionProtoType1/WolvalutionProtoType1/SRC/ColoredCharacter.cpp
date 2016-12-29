@@ -1,21 +1,15 @@
 #include "ColoredCharacter.hpp"
 
-ColoredCharacter::ColoredCharacter(){
-	bg = Black;
-	fg = White;
-	c = ' ';
+ColoredCharacter::ColoredCharacter():
+	bg(Black),fg(White),c(' '){
 }
 
-ColoredCharacter::ColoredCharacter(char ch){
-	bg = Black;
-	fg = White;
-	c = ch;
+ColoredCharacter::ColoredCharacter(char c):
+	bg(Black),fg(White),c(c){
 }
 
-ColoredCharacter::ColoredCharacter(color inputbg, color inputfg, char ch){
-	c = ch;
-	bg = inputbg;
-	fg = inputfg;
+ColoredCharacter::ColoredCharacter(color bg, color fg, char c) :
+   bg(bg),fg(fg), c(c){
 }
 
 //TODO: simplify code paths
