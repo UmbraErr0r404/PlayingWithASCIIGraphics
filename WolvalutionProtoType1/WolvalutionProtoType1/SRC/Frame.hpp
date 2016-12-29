@@ -54,22 +54,22 @@ public:
 
 	/**
 	 * Make new empty frame for target location
-	 * @param Iname The name of the new frame.
-	 * @param Ix X Locatiion where the frame thinks it will be drawn on the screen.
-	 * @param Iy Y Locatiion where the frame thinks it will be drawn on the screen.
-	 * @param Iheight The set height of the frame.
-	 * @param Iwidth The set width of the frame.
+	 * @param name The name of the new frame.
+	 * @param x X Locatiion where the frame thinks it will be drawn on the screen.
+	 * @param y Y Locatiion where the frame thinks it will be drawn on the screen.
+	 * @param height The set height of the frame.
+	 * @param width The set width of the frame.
 	 */
-	Frame(std::string Iname, int Ix, int Iy, int Iheight, int Iwidth); 
+	Frame(std::string name, int x, int y, int height, int width); 
 
 	/**
 	 * Makes a frame coorspanding to the data of the map given to this function.
-	 * @param Iname The name of the new frame.
-	 * @param Ix X Locatiion where the frame thinks it will be drawn on the screen.
-	 * @param Iy Y Locatiion where the frame thinks it will be drawn on the screen.
+	 * @param name The name of the new frame.
+	 * @param x X Locatiion where the frame thinks it will be drawn on the screen.
+	 * @param y Y Locatiion where the frame thinks it will be drawn on the screen.
 	 * @param AMap Any given map that will have its ColoredCharacter data transfered over.
 	 */
-	Frame(std::string Iname, int Ix, int Iy, Map AMap); 
+	Frame(std::string name, int x, int y, Map AMap); 
 
 	/**
 	 * Turns the frame that called this function into a copy of the called file.
