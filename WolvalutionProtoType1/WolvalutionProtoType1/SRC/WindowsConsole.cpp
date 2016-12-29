@@ -47,7 +47,7 @@ void WindowsConsole::SetCursor(int Ix, int Iy){
 	SetConsoleCursorPosition(hStdOut, homeCoords);
 }
 
-void WindowsConsole::ChangeCursorVisibility(bool visibility) //could just be a toggle function?{
+void WindowsConsole::ChangeCursorVisibility(bool visibility){ //could just be a toggle function?
 	CursorVisibility = visibility;
 //https://msdn.microsoft.com/en-us/library/windows/desktop/ms686019(v=vs.85).aspx
 }
@@ -115,7 +115,7 @@ void WindowsConsole::ClearScreen(){
 	}
 }
 
-void WindowsConsole::PrintCurrentMap(int Ix, int Iy, Screen IScreen) //check later{
+void WindowsConsole::PrintCurrentMap(int Ix, int Iy, Screen IScreen) { //check later
 	if (IScreen.CurrentMap().getName() == "Error")
 		;//do nothing
 	else
