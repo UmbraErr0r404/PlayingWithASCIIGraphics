@@ -44,13 +44,13 @@ public:
 	void PushFrameBack(Frame q);
 
 	/**
-   *
-   */
+	 *
+	 */
 	Frame PopFrameFront();
 
 	/**
-   *
-   */
+	 *
+	 */
 	Frame PopFrameBack();
 
 	/**
@@ -73,8 +73,8 @@ public:
 	Frame CurrentMap() const;
 
 	/**
-   * Returns the number of Frames in the PrintOrder
-   */
+	 * Returns the number of Frames in the PrintOrder
+	 */
 	int printOrderLength() const;
       
 };
