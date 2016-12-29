@@ -6,15 +6,15 @@
  * This file holds data about ColorCodes that the windows.
  */
 
-#ifndef __COLORDATA_HPP_INCLUDED__  
-#define __COLORDATA_HPP_INCLUDED__  
+#ifndef __COLORDATA_HPP_INCLUDED__
+#define __COLORDATA_HPP_INCLUDED__
 
 /*
  * Calculates the number needed for correct color in txtCC and CCC
  */
 //TODO: this describes how colors are used in escape codes and so
 //      should be in ColoredCharacter.cpp
-#define ColorCode(bg, fg) ((int(bg) * 0x10) + int(fg)) 
+#define ColorCode(bg, fg) ((int(bg) * 0x10) + int(fg))
 
 enum color{
 	Black       = 0x0,
@@ -34,4 +34,4 @@ enum color{
 	Yellow      = 0xE,
 	White       = 0xF
 };
-#endif 
+#endif

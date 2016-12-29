@@ -6,14 +6,14 @@
  * The WindowsConsole Class is all functions needed to properly print
  * the abstract GUI objects designed for this program.
  */
-#ifndef __WINDOWSCONSOLE_HPP_INCLUDED__  
-#define __WINDOWSCONSOLE_HPP_INCLUDED__  
+#ifndef __WINDOWSCONSOLE_HPP_INCLUDED__
+#define __WINDOWSCONSOLE_HPP_INCLUDED__
 
 /*
  * The following line is necessary for the GetConsoleWindow() function to work!
  * it basically says that you are running this program on Windows 2000 or higher.
  */
-#define _WIN32_WINNT 0x0500 
+#define _WIN32_WINNT 0x0500
 
 //TODO: are all of these needed in the hpp?
 #include "ColorData.hpp"
@@ -23,7 +23,7 @@
 #include <windows.h>
 #include <string>
 #include <conio.h>
-#include <cstdlib> 
+#include <cstdlib>
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h> //for using the function sleep
@@ -96,7 +96,7 @@ public:
 	 * Changes the Console color to the given colorcode.
 	 * @param colorcode The data int that reprents the forground and backgrounf color.
 	 */
-	void ChangeConsoleFont(int colorcode); 
+	void ChangeConsoleFont(int colorcode);
 	//not fully functional, want to rewrite to change font, currently only changes font color
 
 	/**
@@ -122,7 +122,7 @@ public:
 	 * @param IScreen The screen that contains the map you want to print.
 	 */
 	void PrintCurrentMap(int Ix, int Iy, Screen IScreen);
-   
+
 	/**
 	 * Prints the given frame to the console at the given X Y postion.
 	 * @param Ix X postion the frame will printed at.

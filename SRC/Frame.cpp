@@ -7,14 +7,14 @@
 
 //TODO: order this file in the same order as the hpp
 
-void Frame::ResizeFrame(int Iwidth, int Iheight){ 
+void Frame::ResizeFrame(int Iwidth, int Iheight){
 	frame.clear();
 	for (int tx = 0; tx < Iwidth; tx++){
 		frame.push_back(std::deque<ColoredCharacter>());
 		for (int ty = 0; ty < Iheight; ty++){
 			frame[tx].push_back(ColoredCharacter());
 		}
-	} 
+	}
 }
 
 Frame::Frame(){
@@ -79,7 +79,7 @@ void Frame::ImportFrame(int Ix, int Iy, const std::string fileName, std::string 
 			frame[bx][by] = temp;
 		}
 	}
-	 
+
 	myfile.close();
 }
 
@@ -87,14 +87,14 @@ void Frame::ExportFrame(std::string fileName){
 	std::ofstream myfile;
 
 	myfile.open(fileName.c_str());
-	myfile << "Height " << height << " Width " 
+	myfile << "Height " << height << " Width "
 				 << width << " Name " << name << "\n";
 
 	for (unsigned int x = 0; x < width; x++)
 		for (unsigned int y = 0; y < height; y++)
 			myfile << "Char " << int(frame[x][y].getChar())
-						 << " BG " << frame[x][y].getBG() 
-						 << " FG " << frame[x][y].getFG() 
+						 << " BG " << frame[x][y].getBG()
+						 << " FG " << frame[x][y].getFG()
 						 << "\n";
 
 	myfile.close();
@@ -233,7 +233,7 @@ void Frame::PlaceWindowSceneArt(int Ix, int Iy, color bgcolor, color fgcolor){
 	lines.push_back("                                                                                                      ` ");
 	lines.push_back("                                                                                                         .");
 
-	for (auto&line : lines) 
+	for (auto&line : lines)
 		PlaceGenTxt(Ix, Iy++, line, bgcolor, fgcolor);
 }
 
@@ -260,7 +260,7 @@ void Frame::PlaceWindowMoonArt(int Ix, int Iy, color bgcolor, color fgcolor){
 	wshadow.push_back("                              `:::::::::::::::' .::::::::.  `'");
 
 	Iy += 3;
-	for (auto&line : moon) 
+	for (auto&line : moon)
 		PlaceGenTxt(Ix + 75, Iy++, line, bgcolor, fgcolor);
 	Iy += 15;
 	for (auto&line : wshadow)
@@ -322,7 +322,7 @@ void Frame::PlaceExampleMap(int Ix1, int Iy1){
 	ColoredCharacter water(DarkBlue, Blue, char(247));
 	ColoredCharacter Player(Black, Yellow, '@');
 	ColoredCharacter MUnknown(Black, Red, '?');
-   
+
 
 	for (int bx = Ix1 + 1; bx < x2; bx++)
 		for (int by = Iy1 + 1; by < y2; by++)

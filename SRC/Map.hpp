@@ -5,8 +5,8 @@
  * @section DESCRIPTION
  * This class represents a map object which has an array of MapSquares
  */
-#ifndef __MAP_HPP_INCLUDED__  
-#define __MAP_HPP_INCLUDED__  
+#ifndef __MAP_HPP_INCLUDED__
+#define __MAP_HPP_INCLUDED__
 #include <deque>
 #include "MapSquare.hpp"
 #include "Player.hpp"
@@ -127,4 +127,4 @@ public:
 	void modifyPlayerStamina(int num);
 };
 
-#endif 
+#endif

@@ -6,8 +6,8 @@
  * This class reprepresents a MapSqaure and all data about that location.
  */
 
-#ifndef __MAPSQUARE_HPP_INCLUDED__ 
-#define __MAPSQUARE_HPP_INCLUDED__  
+#ifndef __MAPSQUARE_HPP_INCLUDED__
+#define __MAPSQUARE_HPP_INCLUDED__
 
 #include "ColoredCharacter.hpp"
 #include "Scenario.hpp"
@@ -70,4 +70,4 @@ public:
 	void DeActiveScenario();
 };
 
-#endif 
+#endif

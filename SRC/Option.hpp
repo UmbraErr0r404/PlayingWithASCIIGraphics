@@ -8,8 +8,8 @@
  * by the Player.
  */
 
-#ifndef __OPTION_HPP_INCLUDED__   
-#define __OPTION_HPP_INCLUDED__ 
+#ifndef __OPTION_HPP_INCLUDED__
+#define __OPTION_HPP_INCLUDED__
 
 #include <string>
 
@@ -58,4 +58,4 @@ public:
 	std::string getMyText() const;
 };
 
-#endif 
+#endif

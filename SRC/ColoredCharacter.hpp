@@ -7,8 +7,8 @@
  * for colored capaible termails
  */
 
-#ifndef __COLOREDCHARACTER_HPP_INCLUDED__ 
-#define __COLOREDCHARACTER_HPP_INCLUDED__ 
+#ifndef __COLOREDCHARACTER_HPP_INCLUDED__
+#define __COLOREDCHARACTER_HPP_INCLUDED__
 
 #include "ColorData.hpp"
 
@@ -60,4 +60,4 @@ public:
 	 */
 	color getFG() const;
 };
-#endif 
+#endif

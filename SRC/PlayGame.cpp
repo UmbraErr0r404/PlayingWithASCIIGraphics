@@ -3,12 +3,12 @@
  * @author Elizabeth Harasymiw <Elizabeth.Harasymiw@gmail.com>
  *
  * @section DESCRIPTION
- * This is the file that contains the main and where all the 
- * classes do therr main interactions. A large part of this 
+ * This is the file that contains the main and where all the
+ * classes do therr main interactions. A large part of this
  * code might be changed into a game engine file or class.
  */
 
-#include <string>	
+#include <string>
 #include "Screen.hpp"
 #include "Frame.hpp"
 #include "ColoredCharacter.hpp"
@@ -18,13 +18,13 @@
 #include "MapSquare.hpp"
 #include "Map.hpp"
 
-int main(int argc, char * argv[]){ 
+int main(int argc, char * argv[]){
 	WindowsConsole Console;
 	Frame HomeBase;
         HomeBase.ImportFrame(0, 0, "HomeScreen.txt", "HomeBase");
   Frame PlaySelected;
         PlaySelected.ImportFrame(27, 21, "PlaySelected.txt", "PlaySelected");
-  Frame QuitSelected;                                           
+  Frame QuitSelected;
         QuitSelected.ImportFrame(27, 21, "QuitSelected.txt", "QuitSelected");
   Frame IntroBase;
         IntroBase.ImportFrame(0, 0, "IntroScreen.txt", "IntroBase");
@@ -39,7 +39,7 @@ int main(int argc, char * argv[]){
   Frame QuitMenuNo;
         QuitMenuNo.ImportFrame(45, 10, "QuitMenuNo.txt", "QuitMenuNo");
   Frame HelpMenu;
-        HelpMenu.ImportFrame(45, 10, "HelpMenu.txt", "HelpMenu");      
+        HelpMenu.ImportFrame(45, 10, "HelpMenu.txt", "HelpMenu");
   Frame Inventory;
         Inventory.ImportFrame(45, 10, "Inventory.txt", "Inventory");
 
@@ -191,7 +191,7 @@ int main(int argc, char * argv[]){
 				Console.PrintMap(3, 4, IAmMap);
 			}
 			if (key == 'q' || key == 'Q'){
-				Console.PrintFrame(QuitMenuYes.getX(), QuitMenuYes.getY(), QuitMenuYes);     
+				Console.PrintFrame(QuitMenuYes.getX(), QuitMenuYes.getY(), QuitMenuYes);
 				bool YesSelect = true;
 				bool NoSelect = false;
 				MenuOpen = true;
@@ -206,7 +206,7 @@ int main(int argc, char * argv[]){
 							Console.PrintFrame(QuitMenuNo.getX(), QuitMenuNo.getY(), QuitMenuNo);
 					}
 					if (key == ' ' || key == '\r' || key == '\n')
-						MenuOpen = false;                  
+						MenuOpen = false;
 				}
 				if (YesSelect)
 					return 0;
@@ -304,7 +304,7 @@ int main(int argc, char * argv[]){
 		//TODO: If this || holds true all of the time, should there only
 		//      exist 2 bools to hold the value, not 3?
 		if(wonGame || loseGame)
-			PlayGame = false;     
+			PlayGame = false;
 	}
 
 	Console.ClearScreen();
@@ -316,5 +316,5 @@ int main(int argc, char * argv[]){
 
 	//TODO: Make a slection to playagain or quit
 
-	return 0; 
+	return 0;
 }

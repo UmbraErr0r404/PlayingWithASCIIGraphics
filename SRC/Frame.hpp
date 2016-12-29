@@ -21,11 +21,11 @@
  *    5. PlaceWindowSceneArt
  *    6. PlaceLogo
  *
- *  * Make ImportFrame into a constructor 
+ *  * Make ImportFrame into a constructor
  */
 
-#ifndef __FRAME_HPP_INCLUDED__   
-#define __FRAME_HPP_INCLUDED__  
+#ifndef __FRAME_HPP_INCLUDED__
+#define __FRAME_HPP_INCLUDED__
 #include "Map.hpp"
 #include <string>
 #include <deque>
@@ -50,7 +50,7 @@ public:
 	/**
 	 * Default construtor
 	 */
-	Frame(); 
+	Frame();
 
 	/**
 	 * Make new empty frame for target location
@@ -60,7 +60,7 @@ public:
 	 * @param Iheight The set height of the frame.
 	 * @param Iwidth The set width of the frame.
 	 */
-	Frame(std::string Iname, int Ix, int Iy, int Iheight, int Iwidth); 
+	Frame(std::string Iname, int Ix, int Iy, int Iheight, int Iwidth);
 
 	/**
 	 * Makes a frame coorspanding to the data of the map given to this function.
@@ -69,7 +69,7 @@ public:
 	 * @param Iy Y Locatiion where the frame thinks it will be drawn on the screen.
 	 * @param AMap Any given map that will have its ColoredCharacter data transfered over.
 	 */
-	Frame(std::string Iname, int Ix, int Iy, Map AMap); 
+	Frame(std::string Iname, int Ix, int Iy, Map AMap);
 
 	/**
 	 * Turns the frame that called this function into a copy of the called file.
@@ -134,8 +134,8 @@ public:
 	 * @param Ix X postion of refference point.
 	 * @param Iy Y postion of refference point.
 	 * @param length Number of characters drawn.
-	 * @param bgcolor Background color of the line characters. 
-	 * @param fgcolor Foreground color of the line characters. 
+	 * @param bgcolor Background color of the line characters.
+	 * @param fgcolor Foreground color of the line characters.
 	 */
 	void PlaceHLine(int Ix, int Iy, int length, color bgcolor, color fgcolor);
 
@@ -183,16 +183,16 @@ public:
 	void PlaceGenTxt(int Ix, int Iy, std::string text, color bgcolor, color fgcolor);
 
 	/**
-	 * ASCII ART 
+	 * ASCII ART
 	 * @param Ix
 	 * @param Iy
 	 * @param bgcolor
 	 * @param fgcolor
 	 */
-	void PlaceLogo(int Ix, int Iy, color bgcolor, color fgcolor); 
+	void PlaceLogo(int Ix, int Iy, color bgcolor, color fgcolor);
 
 	/**
-	 * ASCII ART 
+	 * ASCII ART
 	 * @param Ix
 	 * @param Iy
 	 * @param bgcolor
@@ -251,4 +251,4 @@ public:
 	void CleanUpFrame();
 };
 
-#endif 
+#endif

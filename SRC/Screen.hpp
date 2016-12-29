@@ -6,8 +6,8 @@
  * This is a containor class for Frame, it is an vecotor strture of frames;
  */
 
-#ifndef __SCREEN_HPP_INCLUDED__   
-#define __SCREEN_HPP_INCLUDED__   
+#ifndef __SCREEN_HPP_INCLUDED__
+#define __SCREEN_HPP_INCLUDED__
 
 #include "ColoredCharacter.hpp"
 #include "Frame.hpp"
@@ -29,7 +29,7 @@ public:
 	Screen();
 
 	/**
-	 * 
+	 *
 	 */
 	void ClearPrintOrder();
 
@@ -76,6 +76,6 @@ public:
    * Returns the number of Frames in the PrintOrder
    */
 	int printOrderLength() const;
-      
+
 };
-#endif 
+#endif

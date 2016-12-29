@@ -6,8 +6,8 @@
  * This Class represents a Player and all data related to the Player, as they play the game.
  */
 
-#ifndef __PLAYER_HPP_INCLUDED__   
-#define __PLAYER_HPP_INCLUDED__ 
+#ifndef __PLAYER_HPP_INCLUDED__
+#define __PLAYER_HPP_INCLUDED__
 #include <deque>
 #include <string>
 
@@ -52,7 +52,7 @@ public:
 	 * Returns the player's current x location.
 	 */
 	int getXLocation() const;
-   
+
 	/**
 	 * Returns the player's current y location.
 	 */
@@ -105,4 +105,4 @@ public:
 
 };
 
-#endif 
+#endif
