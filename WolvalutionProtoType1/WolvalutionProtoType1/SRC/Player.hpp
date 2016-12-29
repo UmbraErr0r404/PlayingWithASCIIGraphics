@@ -1,6 +1,6 @@
 /**
  * @file
- * @author Sarah Higgens <example@gmail.com>
+ * @author Elizabeth Harasymiw <Elizabeth.Harasymiw@gmail.com>
  *
  * @section DESCRIPTION
  * This Class represents a Player and all data related to the Player, as they play the game.

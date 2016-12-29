@@ -7,7 +7,6 @@ Easy
 * typedef uint
 * use initialize lists when possible
 * finish creating doxygen comments
-* remove per-file authors
 
 Medium
 ------

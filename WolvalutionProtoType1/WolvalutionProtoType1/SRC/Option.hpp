@@ -1,6 +1,6 @@
 /**
  * @file
- * @author Zachary Pollard <example@gmail.com>
+ * @author Elizabeth Harasymiw <Elizabeth.Harasymiw@gmail.com>
  *
  * @section DESCRIPTION
  * This class holds all the data that will be needed to both display an option and

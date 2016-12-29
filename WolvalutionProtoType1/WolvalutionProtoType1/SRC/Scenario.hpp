@@ -1,6 +1,6 @@
 /**
  * @file
- * @author Zachary Pollard <example@gmail.com>
+ * @author Elizabeth Harasymiw <Elizabeth.Harasymiw@gmail.com>
  *
  * @section DESCRIPTION
  * This class holds all the data related to a Scenario within a given MapSqaure on Map.
