@@ -7,6 +7,9 @@
 
 //TODO: order this file in the same order as the hpp
 
+//TODO: Dose that need to take parameters?
+//      I think this funciton should be private and just use the local
+//      width and height variables.
 void Frame::ResizeFrame(int Iwidth, int Iheight){ 
 	frame.clear();
 	for (int tx = 0; tx < Iwidth; tx++){
