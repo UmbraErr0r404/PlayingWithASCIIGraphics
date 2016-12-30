@@ -80,29 +80,34 @@ public:
 	std::string removeItem(int index);
 
 	/**
-   * Sets the players coorniated to a location that represents moving one space north
-   */
+	 * Sets the players coorniated to a location that represents moving one space north
+	 */
 	void movePlayerNorth();
 
 	/**
-   * Sets the players coorniated to a location that represents moving one space south
-   */
+	 * Sets the players coorniated to a location that represents moving one space south
+	 */
 	void movePlayerSouth();
 
 	/**
-   * Sets the players coorniated to a location that represents moving one space east
-   */
+	 * Sets the players coorniated to a location that represents moving one space east
+	 */
 	void movePlayerEast();
 
 	/**
-   * Sets the players coorniated to a location that represents moving one space west
-   */
+	 * Sets the players coorniated to a location that represents moving one space west
+	 */
 	void movePlayerWest();
 
+	/**
+	 *
+	 */
 	int getMAXHEALTH() const;
 
+	/**
+	 *
+	 */
 	int getMAXSTAMINA() const;
-
 };
 
 #endif

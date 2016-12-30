@@ -1,7 +1,7 @@
 #include "Screen.hpp"
 
-Screen::Screen(){
-	frameCount = 0;
+Screen::Screen():
+	frameCount(0){
 }
 
 void Screen::ClearPrintOrder(){
