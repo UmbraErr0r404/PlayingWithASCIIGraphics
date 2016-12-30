@@ -11,6 +11,7 @@
 #define __COLOREDCHARACTER_HPP_INCLUDED__
 
 #include "ColorData.hpp"
+#include "BaseTypes.hpp"
 
 //TODO: move operators to be defined at end of class
 

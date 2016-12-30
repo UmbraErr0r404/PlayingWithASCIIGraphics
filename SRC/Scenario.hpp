@@ -12,6 +12,7 @@
 #define __SCENARIO_HPP_INCLUDED__
 #include <string>
 #include "Option.hpp"
+#include "BaseTypes.hpp"
 
 class Scenario{
 private:

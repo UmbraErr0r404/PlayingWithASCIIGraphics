@@ -11,6 +11,7 @@
 
 #include "ColoredCharacter.hpp"
 #include "Scenario.hpp"
+#include "BaseTypes.hpp"
 
 class MapSquare{
 private:

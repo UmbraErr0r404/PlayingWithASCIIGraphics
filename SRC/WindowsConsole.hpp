@@ -19,6 +19,7 @@
 #include "ColorData.hpp"
 #include "Frame.hpp"
 #include "Screen.hpp"
+#include "BaseTypes.hpp"
 #include <iostream>
 #include <windows.h>
 #include <string>

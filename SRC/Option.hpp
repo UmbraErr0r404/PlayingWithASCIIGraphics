@@ -11,6 +11,7 @@
 #ifndef __OPTION_HPP_INCLUDED__
 #define __OPTION_HPP_INCLUDED__
 
+#include "BaseTypes.hpp"
 #include <string>
 
 class Option{

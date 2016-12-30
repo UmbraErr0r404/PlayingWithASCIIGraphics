@@ -12,6 +12,7 @@
 #include "ColoredCharacter.hpp"
 #include "Frame.hpp"
 #include "Map.hpp"
+#include "BaseTypes.hpp"
 #include <string>
 #include <deque>
 

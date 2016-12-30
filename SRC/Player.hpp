@@ -8,6 +8,7 @@
 
 #ifndef __PLAYER_HPP_INCLUDED__
 #define __PLAYER_HPP_INCLUDED__
+#include "BaseTypes.hpp"
 #include <deque>
 #include <string>
 

@@ -10,6 +10,7 @@
 #include <deque>
 #include "MapSquare.hpp"
 #include "Player.hpp"
+#include "BaseTypes.hpp"
 
 /*
  * File local TODO list
