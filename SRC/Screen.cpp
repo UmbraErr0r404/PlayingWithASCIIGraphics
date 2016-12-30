@@ -33,7 +33,7 @@ Frame Screen::PopFrameBack(){
 }
 
 int Screen::SearchFrame(std::string searchName) const{
-	for (unsigned int i = 0; i < PrintOrder.size(); i++)
+	for (uint i = 0; i < PrintOrder.size(); i++)
 		if (PrintOrder[i].getName() == searchName)
 			return i;
 	return -1;

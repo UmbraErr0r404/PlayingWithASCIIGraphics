@@ -60,12 +60,12 @@ public:
 	/**
    *
    */
-	unsigned int getMyPlayerXLocation() const;
+	uint getMyPlayerXLocation() const;
 
 	/**
    *
    */
-	unsigned int getMyPlayerYLocation() const;
+	uint getMyPlayerYLocation() const;
 
 	/**
    *

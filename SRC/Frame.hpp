@@ -33,10 +33,10 @@
 
 class Frame{
 private:
-	unsigned int x;
-	unsigned int y;
-	unsigned int height;
-	unsigned int width;
+	uint x;
+	uint y;
+	uint height;
+	uint width;
 	std::deque<std::deque<ColoredCharacter> > frame;
 	std::string name;
 
@@ -102,22 +102,22 @@ public:
 	/**
 	 * Gets this frame's X print location and returns it.
 	 */
-	unsigned int getX() const;
+	uint getX() const;
 
 	/**
 	 * Gets this frame's Y print location and returns it.
 	 */
-	unsigned int getY() const;
+	uint getY() const;
 
 	/**
 	 * Gets this frame's height and returns it.
 	 */
-	unsigned int getHeight() const;
+	uint getHeight() const;
 
 	/**
 	 * Gets this frame's width and returns it.
 	 */
-	unsigned int getWidth() const;
+	uint getWidth() const;
 
 	/**
 	 * Places the ColoredCharacters from the given frame onto

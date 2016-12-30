@@ -31,11 +31,11 @@ int Map::getWidth() const{
 	return WIDTH;
 }
 
-unsigned int Map::getMyPlayerXLocation() const{
+uint Map::getMyPlayerXLocation() const{
 	return myPlayer.getXLocation();
 }
 
-unsigned int Map::getMyPlayerYLocation() const{
+uint Map::getMyPlayerYLocation() const{
 	return myPlayer.getYLocation();
 }
 

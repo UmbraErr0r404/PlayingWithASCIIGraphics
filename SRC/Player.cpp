@@ -36,7 +36,7 @@ std::string Player::getName() const{
 }
 
 int Player::searchItems(std::string item) const{
-	for (unsigned int i = 0; i < inventory.size(); i++)
+	for (uint i = 0; i < inventory.size(); i++)
 		if (inventory[i] == item)
 			return i;
 		return -1;
