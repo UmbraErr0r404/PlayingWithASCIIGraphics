@@ -31,3 +31,8 @@ color ColoredCharacter::getBG() const{
 color ColoredCharacter::getFG() const{
 	return fg;
 }
+
+char ColoredCharacter::ColorCode(uint bg, uint fg)
+{
+	return ((bg * 0x10) + fg);
+}

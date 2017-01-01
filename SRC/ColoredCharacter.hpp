@@ -59,5 +59,12 @@ public:
 	 * Gets the foreground color for this ColoredCharacter.
 	 */
 	color getFG() const;
+
+	/**
+	 * Describes how colors are used in escape codes
+	 * @param bg
+	 * @param fg
+	 */
+	char ColorCode(uint bg, uint fg);
 };
 #endif
