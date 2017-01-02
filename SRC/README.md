@@ -7,6 +7,7 @@ Easy
 * use initialize lists when possible
 * finish creating doxygen comments
 * make more useful param names
+* make all comments 80 chars or less
 
 Medium
 ------
