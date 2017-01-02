@@ -21,33 +21,35 @@ public:
 
 template<auto T=uint>
 bool coordinate::operator==(const coordinate<T>& rhs)const{
-	return x==rhs.x && y==rhs.y;
+	return this->x==rhs.x && this->y==rhs.y;
 }
 
 template<auto T=uint>
 bool coordinate::operator>(const coordinate<T>& rhs)const{
-	return x>rhs.x && y>rhs.y;
+	return this->x>rhs.x && this->y>rhs.y;
 }
 
 template<auto T=uint>
 bool coordinate::operator<(const coordinate<T>& rhs)const{
-	return x<rhs.x && y<rhs.y;
+	return this->x<rhs.x && this->y<rhs.y;
 }
 
 template<auto T=uint>
 bool coordinate::operator>=(const coordinate<T>& rhs)const{
-	return x>=rhs.x && y>=rhs.y;
+	return this->x>=rhs.x && this->y>=rhs.y;
 }
 
 template<auto T=uint>
 bool coordinate::operator<=(const coordinate<T>& rhs)const{
-	return x<=rhs.x && y<=rhs.y;
+	return this->x<=rhs.x && this->y<=rhs.y;
 }
 
 
 template<auto T=uint>
-bool coordinate::operator=(const coordinate<T>& rhs){
-	return x=rhs.x && y=rhs.y;
+coordinate<T>& coordinate::operator=(const coordinate<T>& rhs){
+	x=rhs.x;
+	y=rhs.y;
+	return *this;
 }
 
 
