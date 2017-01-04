@@ -16,6 +16,7 @@ Medium
 * make per object tests
 * remove all calls to another object's members
 * make a point object for better clarity
+* change to the bracket style Lizzy wants
 
 Hard
 ----
